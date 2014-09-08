@@ -11,9 +11,10 @@
 
 		function init() {
 			document.addEventListener("mousedown", getPosition, false);
-			window.addEventListener("beforeunload", ajaxPostData(JSON.stringify(coords)));
-
-
+			window.addEventListener("beforeunload", function() {
+				  ajaxPostData(JSON.stringify(coords));
+				}
+			);
 		}
 
 		function getPosition(event) {
@@ -30,7 +31,7 @@
 			xhr = new XMLHttpRequest;
 			xhr.open('POST', 'logcoords.php', false);
 			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send(data);
+			xhr.send('coords=' + data);
 			console.log('AJAX request sent: ' + data);
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
