@@ -14,6 +14,7 @@
 
 			document.addEventListener("mousedown", function() {
 				clicks.push(getEventCoordinates(this));
+				console.log(clicks);
 			});
 
 			document.addEventListener("mousemove", function() {
