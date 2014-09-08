@@ -19,12 +19,12 @@
 				var timer,
 					onmousestop = function() {
 						movement.push(getEventCoordinates(this));
-						console.log(JSON.stringify(movement));
 						timer = null;
 					};
 
-				clearTimeout( timer );  // remove active end timer
-				timer = setTimeout( onmousestop, 1000 );  // delay the stopping action another 25 millis
+				clearTimeout( timer );
+				console.log('executed');
+				timer = setTimeout( onmousestop, 1000 );
 			});
 
 			window.addEventListener("beforeunload", function() {
