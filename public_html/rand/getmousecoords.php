@@ -21,10 +21,10 @@
 				"y"     : event.pageY,
 				"time"  : Math.round(+new Date()/1000)
 			});
-			postJSON(coords);
 		}
 
 		function postJSON(jsondata) {
+			alert('DONT GO PLEASE');
 			xhr = new XMLHttpRequest;
 			xhr.open('POST', 'logcoords.php');
 			xhr.setRequestHeader("Content-Type", "application/json");
