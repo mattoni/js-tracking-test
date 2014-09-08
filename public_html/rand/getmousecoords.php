@@ -25,7 +25,7 @@
 		function ajaxPostData(data) {
 			console.log(data);//alert(JSON.stringify(data));
 			xhr = new XMLHttpRequest;
-			xhr.open('POST', 'logcoords.php');
+			xhr.open('POST', 'logcoords.php', false);
 			xhr.setRequestHeader("Content-Type", "application/json");
 			xhr.send(data);
 			console.log('AJAX request sent: ' + data);
