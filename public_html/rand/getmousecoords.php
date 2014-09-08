@@ -8,9 +8,9 @@
 		var coords = [];
 
 		document.addEventListener("DOMContentLoaded", init, false);
-		window.onunload = ajaxPostData(JSON.stringify(coords));
 
 		function init() {
+			window.onunload = ajaxPostData(JSON.stringify(coords));
 			document.addEventListener("mousedown", getPosition, false);
 		}
 
