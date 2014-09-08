@@ -12,7 +12,7 @@
 		function init() {
 			document.addEventListener("mousedown", getPosition, false);
 			window.addEventListener("beforeunload", function() {
-				  console.log('FIRED');
+				  ajaxPostData(JSON.stringify(coords));
 				}
 			);
 		}
