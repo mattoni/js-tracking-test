@@ -18,13 +18,13 @@
 			document.addEventListener("mousemove", function() {
 				var timer,
 					onmousestop = function() {
-						movement.push(getEventCoordinates().bind(event));
+						movement.push(getEventCoordinates().bind(test));
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
 
 				clearTimeout( timer );  // remove active end timer
-				timer = setTimeout( onmousestop.bind(event), 250 );  // delay the stopping action another 25 millis
+				timer = setTimeout( onmousestop.bind(test), 1000 );  // delay the stopping action another 25 millis
 			});
 
 			window.addEventListener("beforeunload", function() {
