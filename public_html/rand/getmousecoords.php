@@ -31,7 +31,7 @@
 			xhr = new XMLHttpRequest;
 			xhr.open('POST', 'logcoords.php');
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			xhr.send(data);
+			xhr.send('data='+data);
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
 			};
