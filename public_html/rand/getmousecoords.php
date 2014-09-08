@@ -12,7 +12,6 @@
 		function init() {
 			//window.onunload = ajaxPostData(JSON.stringify(coords));
 			document.addEventListener("mousedown", getPosition, false);
-			window.addEventListener("beforeunload", ajaxPostData(JSON.stringify(coords)));
 		}
 
 		function getPosition(event) {
@@ -23,6 +22,7 @@
 			});
 			console.log(JSON.stringify(coords));
 		}
+		window.addEventListener("unload", ajaxPostData(JSON.stringify(coords)));
 
 		function ajaxPostData(data) {
 			console.log(data);//alert(JSON.stringify(data));
@@ -34,9 +34,10 @@
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
 			};
-
-
 		}
+
+		window.addEventListener("unload", ajaxPostData(JSON.stringify(coords)));
+
 	</script>
 </head>
 <body>
