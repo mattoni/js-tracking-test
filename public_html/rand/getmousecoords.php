@@ -5,24 +5,33 @@
 	<title>Get the coordinates on canvas</title>
 	<meta charset="utf-8">
 	<script type="text/javascript">
-		var coords = [];
-
 		document.addEventListener("DOMContentLoaded", init, false);
 
 		function init() {
-			document.addEventListener("mousedown", getPosition, false);
+			var clicks = [];
+			var movement = [];
+
+			document.addEventListener("mousedown", function() {
+				clicks.push(getEventCoordinates());
+				console.log(clicks);
+			});
+
 			window.addEventListener("beforeunload", function() {
-				  ajaxPostData(JSON.stringify(coords));
+				  ajaxPostData(JSON.stringify(clicks));
 				}
 			);
 		}
 
-		function getPosition(event) {
-			coords.push({
+		function getEventCoordinates() {
+			return [{
 				"x"     : event.pageX,
 				"y"     : event.pageY,
 				"time"  : Math.round(+new Date()/1000)
-			});
+			}];
+		}
+
+		function recordMouseMovement(event, pushTo) {
+
 		}
 
 		function ajaxPostData(data) {
