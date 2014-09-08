@@ -20,6 +20,7 @@
 				"y"     : event.pageY,
 				"time"  : Math.round(+new Date()/1000)
 			});
+			console.log(JSON.stringify(coords));
 		}
 
 		function ajaxPostData(data) {
