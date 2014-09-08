@@ -24,6 +24,7 @@
 						timer = null;
 					};
 				return function() {
+					console.log(timer);
 					clearTimeout( timer );  // remove active end timer
 					timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
 				};
