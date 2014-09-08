@@ -7,12 +7,14 @@
 	<script type="text/javascript">
 		var coords = [];
 
-		window.addEventListener("unload", ajaxPostData(JSON.stringify(coords)));
 		document.addEventListener("DOMContentLoaded", init, false);
 
 		function init() {
-			//window.onunload = ajaxPostData(JSON.stringify(coords));
 			document.addEventListener("mousedown", getPosition, false);
+			window.addEventListener("unload", function() {
+				  alert('FIRED');
+				}
+			);
 		}
 
 		function getPosition(event) {
@@ -23,7 +25,6 @@
 			});
 			console.log(JSON.stringify(coords));
 		}
-		window.addEventListener("unload", ajaxPostData(JSON.stringify(coords)));
 
 		function ajaxPostData(data) {
 			console.log(data);//alert(JSON.stringify(data));
