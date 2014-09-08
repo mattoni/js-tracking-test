@@ -10,21 +10,20 @@
 		function init() {
 			var clicks = [];
 			var movement = [];
+			var mousetimer;
 
 			document.addEventListener("mousedown", function() {
-				//clicks.push(getEventCoordinates());
+				clicks.push(getEventCoordinates(this));
 			});
 
 			document.addEventListener("mousemove", function() {
-				var timer,
-					onmousestop = function() {
+				var onmousestop = function() {
 						movement.push(getEventCoordinates(this));
-						timer = null;
+						mousetimer = null;
 					};
 
-				clearTimeout( timer );
-				console.log('executed');
-				timer = setTimeout( onmousestop, 1000 );
+				clearTimeout( mousetimer );
+				mousetimer = setTimeout( onmousestop, 1000 );
 			});
 
 			window.addEventListener("beforeunload", function() {
