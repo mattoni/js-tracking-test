@@ -11,7 +11,7 @@
 
 		function init() {
 			//window.onunload = ajaxPostData(JSON.stringify(coords));
-			window.onunload = function() {
+			window.onbeforeunload = function() {
 				return confirm("Are you sure you want to leave this page?");
 			};
 			document.addEventListener("mousedown", getPosition, false);
