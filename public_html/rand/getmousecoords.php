@@ -17,7 +17,6 @@
 			});
 
 			window.addEventListener("mousemove", function() {
-				console.log('TEST');
 				var timer,
 					onmousestop = function() {
 						movement.push(getEventCoordinates());
@@ -26,7 +25,7 @@
 					};
 				return function() {
 					clearTimeout( timer );  // remove active end timer
-					timer = setTimeout( onmousestop, 25 );  // delay the stopping action another 25 millis
+					timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
 				};
 			});
 
