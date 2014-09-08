@@ -33,6 +33,7 @@
 		}
 
 		function getEventCoordinates(event) {
+			console.log(event);
 			return {
 				"x"     : event.pageX,
 				"y"     : event.pageY,
