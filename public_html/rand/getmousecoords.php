@@ -36,8 +36,8 @@
 		function getEventCoordinates(event) {
 			console.log(event);
 			return {
-				"x"     : event.pageX,
-				"y"     : event.pageY,
+				"x"     : event.clientX,
+				"y"     : event.clientY,
 				"time"  : Math.round(+new Date()/1000)
 			};
 		}
