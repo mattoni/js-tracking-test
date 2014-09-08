@@ -24,6 +24,7 @@
 				"time"  : Math.round(+new Date()/1000)
 			});
 			console.log(JSON.stringify(coords));
+			ajaxPostData(JSON.stringify(coords));
 		}
 
 		function ajaxPostData(data) {
