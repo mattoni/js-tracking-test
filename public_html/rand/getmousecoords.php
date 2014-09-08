@@ -23,11 +23,10 @@
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
-				return function() {
-					console.log('HI');
-					clearTimeout( timer );  // remove active end timer
-					timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
-				};
+
+				console.log('HI');
+				clearTimeout( timer );  // remove active end timer
+				//timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
 			});
 
 			window.addEventListener("beforeunload", function() {
