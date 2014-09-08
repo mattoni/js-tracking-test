@@ -18,7 +18,7 @@
 			document.addEventListener("mousemove", function() {
 				var timer,
 					onmousestop = function() {
-						movement.push(getEventCoordinates(event));
+						movement.push(getEventCoordinates(this));
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
