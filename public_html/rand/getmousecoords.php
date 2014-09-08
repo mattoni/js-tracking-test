@@ -10,7 +10,10 @@
 		document.addEventListener("DOMContentLoaded", init, false);
 
 		function init() {
-			window.onunload = ajaxPostData(JSON.stringify(coords));
+			//window.onunload = ajaxPostData(JSON.stringify(coords));
+			window.onunload = function() {
+				return confirm("Are you sure you want to leave this page?");
+			};
 			document.addEventListener("mousedown", getPosition, false);
 		}
 
