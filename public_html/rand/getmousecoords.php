@@ -20,12 +20,11 @@
 			document.addEventListener("mousemove", function() {
 				var onmousestop = function(event) {
 						movement.push(getEventCoordinates(event));
-						console.log(mousetimer);
 						mousetimer = null;
 					};
 
 				clearTimeout( mousetimer );
-				mousetimer = setTimeout( onmousestop(event), 10000 );
+				mousetimer = setTimeout(onmousestop().bind(event), 10000 );
 			});
 
 			window.addEventListener("beforeunload", function() {
