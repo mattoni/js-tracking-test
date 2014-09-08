@@ -16,7 +16,7 @@
 				clicks.push(getEventCoordinates());
 			});
 
-			document.addEventListener("mousemove", function() {
+			document.addEventListener("mousemove", function(movement) {
 				var timer,
 					onmousestop = function() {
 						movement.push(getEventCoordinates());
@@ -24,9 +24,8 @@
 						timer = null;
 					};
 
-				console.log(timer);
 				clearTimeout( timer );  // remove active end timer
-				//timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
+				timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
 			});
 
 			window.addEventListener("beforeunload", function() {
