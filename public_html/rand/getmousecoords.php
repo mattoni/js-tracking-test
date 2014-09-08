@@ -16,15 +16,18 @@
 				clicks.push(getEventCoordinates());
 			});
 
-			window.addEventListener("mousemove", function() {
+			document.addEventListener("mousemove", function() {
+				console.log("TEST");
 				var timer,
 					onmousestop = function() {
 						movement.push(getEventCoordinates());
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
-				clearTimeout( timer );  // remove active end timer
-				timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
+				return function() {
+					clearTimeout( timer );  // remove active end timer
+					timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
+				};
 			});
 
 			window.addEventListener("beforeunload", function() {
