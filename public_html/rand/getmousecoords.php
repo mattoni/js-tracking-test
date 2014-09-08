@@ -27,11 +27,10 @@
 		}
 
 		function ajaxPostData(data) {
-			console.log(data);//alert(JSON.stringify(data));
 			xhr = new XMLHttpRequest;
 			xhr.open('POST', 'logcoords.php', false);
 			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send('coords=' + data);
+			xhr.send(data);
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
 			};
