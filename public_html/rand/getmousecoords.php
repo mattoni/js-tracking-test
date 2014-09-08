@@ -10,7 +10,8 @@
 		function init() {
 			var clicks = [];
 			var movement = [];
-			var mousetimer;
+			var mouseEvent = {};
+			var mouseTimer;
 
 			document.addEventListener("mousedown", function() {
 				clicks.push(getEventCoordinates(event));
@@ -18,14 +19,15 @@
 			});
 
 			document.addEventListener("mousemove", function() {
+				mouseEvent = event;
 				var onmousestop = function(event) {
 						movement.push(getEventCoordinates(event));
 					console.log(JSON.stringify(movement));
-						mousetimer = null;
+						mouseTimer = null;
 					};
 
-				clearTimeout( mousetimer );
-				mousetimer = setTimeout(function() { onmousestop(event) }, 1000 );
+				clearTimeout( mouseTimer );
+				mouseTimer = setTimeout(function() { onmousestop(mouseEvent) }, 1000 );
 			});
 
 			window.addEventListener("beforeunload", function() {
