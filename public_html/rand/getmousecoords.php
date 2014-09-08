@@ -16,7 +16,7 @@
 				clicks.push(getEventCoordinates());
 			});
 
-			document.addEventListener("mousemove", function() {
+			window.addEventListener("mousemove", function() {
 				var timer,
 					onmousestop = function() {
 						movement.push(getEventCoordinates());
