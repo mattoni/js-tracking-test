@@ -7,6 +7,7 @@
 	<script type="text/javascript">
 		var coords = [];
 
+		window.addEventListener("unload", ajaxPostData(JSON.stringify(coords)));
 		document.addEventListener("DOMContentLoaded", init, false);
 
 		function init() {
@@ -35,8 +36,6 @@
 				console.log(xhr.responseText);
 			};
 		}
-
-		window.addEventListener("unload", ajaxPostData(JSON.stringify(coords)));
 
 	</script>
 </head>
