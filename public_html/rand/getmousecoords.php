@@ -25,7 +25,7 @@
 					};
 
 				clearTimeout( mousetimer );
-				mousetimer = setTimeout(onmousestop.bind(event), 1000 );
+				mousetimer = setTimeout(function() { onmousestop.bind(event) }, 1000 );
 			});
 
 			window.addEventListener("beforeunload", function() {
