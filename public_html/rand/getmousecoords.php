@@ -28,7 +28,7 @@
 
 		function ajaxPostData(data) {
 			xhr = new XMLHttpRequest;
-			xhr.open('POST', 'logcoords.php', false);
+			xhr.open('POST', 'logcoords.php');
 			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 			xhr.send(data);
 			xhr.onreadystatechange=function() {
