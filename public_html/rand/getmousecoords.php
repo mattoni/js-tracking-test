@@ -5,22 +5,31 @@
 	<title>Get the coordinates on canvas</title>
 	<meta charset="utf-8">
 	<script type="text/javascript">
+		var coords = [];
+
 		document.addEventListener("DOMContentLoaded", init, false);
+
+		window.addEventListener('onbeforeunload', postJSON(coords), false);
 
 		function init() {
 			document.addEventListener("mousedown", getPosition, false);
 		}
 
 		function getPosition(event) {
-			postCoords(event.pageX, event.pageY);
+			coords.push({
+				"x"     : event.pageX,
+				"y"     : event.pageY,
+				"time"  : Math.round(+new Date()/1000)
+			});
+			postJSON(coords);
 		}
 
-		function postCoords(x, y) {
+		function postJSON(jsondata) {
 			xhr = new XMLHttpRequest;
 			xhr.open('POST', 'logcoords.php');
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			xhr.send('xcoord='+x+'&ycoord='+y);
-			console.log('AJAX request sent. xcoord: '+x+' ycoord: '+y);
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send(JSON.stringify(jsondata));
+			console.log('AJAX request sent: ' + JSON.stringify(jsondata));
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
 			};

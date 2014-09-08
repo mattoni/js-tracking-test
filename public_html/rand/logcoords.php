@@ -1,8 +1,7 @@
 <?php
 $coords = file_get_contents('coords.json');
 
-date_default_timezone_set('UTC');
-$timestamp = new Datetime();
+exit($_POST);
 
 if($coords) {
 	$coords =  json_decode($coords, true);
