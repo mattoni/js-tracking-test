@@ -9,7 +9,7 @@
 
 		document.addEventListener("DOMContentLoaded", init, false);
 
-		window.addEventListener('onbeforeunload', postJSON(coords), false);
+		window.addEventListener('onbeforeunload', ajaxPostData(JSON.stringify(coords)), false);
 
 		function init() {
 			document.addEventListener("mousedown", getPosition, false);
@@ -23,13 +23,13 @@
 			});
 		}
 
-		function postJSON(jsondata) {
+		function ajaxPostData(data) {
 			alert(JSON.stringify(jsondata));
 			xhr = new XMLHttpRequest;
 			xhr.open('POST', 'logcoords.php');
 			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send(JSON.stringify(jsondata));
-			console.log('AJAX request sent: ' + JSON.stringify(jsondata));
+			xhr.send(data);
+			console.log('AJAX request sent: ' + data);
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
 			};
