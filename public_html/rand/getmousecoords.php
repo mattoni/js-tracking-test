@@ -11,8 +11,8 @@
 
 		function init() {
 			//window.onunload = ajaxPostData(JSON.stringify(coords));
-			window.onbeforeunload = ajaxPostData(JSON.stringify(coords));
 			document.addEventListener("mousedown", getPosition, false);
+			window.addEventListener("beforeunload", ajaxPostData(JSON.stringify(coords)));
 		}
 
 		function getPosition(event) {
