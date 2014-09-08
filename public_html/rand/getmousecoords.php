@@ -10,16 +10,16 @@
 		function init() {
 			var clicks = [];
 			var movement = [];
-			var timer;
 
 			document.addEventListener("mousedown", function() {
-				clicks.push(getEventCoordinates());
+				clicks.push(getEventCoordinates(this));
 			});
 
 			document.addEventListener("mousemove", function() {
+				var event = this;
 				var timer,
-					onmousestop = function() {
-						movement.push(getEventCoordinates(this));
+					onmousestop = function(event) {
+						movement.push(getEventCoordinates(event));
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
