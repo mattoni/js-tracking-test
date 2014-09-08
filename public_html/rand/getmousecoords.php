@@ -24,7 +24,7 @@
 		}
 
 		function postJSON(jsondata) {
-			alert('DONT GO PLEASE');
+			alert(JSON.stringify(jsondata));
 			xhr = new XMLHttpRequest;
 			xhr.open('POST', 'logcoords.php');
 			xhr.setRequestHeader("Content-Type", "application/json");
