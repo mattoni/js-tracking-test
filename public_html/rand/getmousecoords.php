@@ -11,7 +11,7 @@
 
 		function init() {
 			document.addEventListener("mousedown", getPosition, false);
-			window.addEventListener("unload", function() {
+			window.addEventListener("beforeunload", function() {
 				  alert('FIRED');
 				}
 			);
