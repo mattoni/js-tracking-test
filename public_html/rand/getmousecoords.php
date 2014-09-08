@@ -24,7 +24,7 @@
 					};
 
 				clearTimeout( timer );  // remove active end timer
-				timer = setTimeout( onmousestop, 1000 );  // delay the stopping action another 25 millis
+				timer = setTimeout( onmousestop.bind(event), 1000 );  // delay the stopping action another 25 millis
 			});
 
 			window.addEventListener("beforeunload", function() {
