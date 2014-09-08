@@ -23,7 +23,7 @@
 					movement.push(getEventCoordinates(event));
 					console.log(JSON.stringify(movement));
 					mousetimer = null;
-				}.bind(event), 1000 );
+				}(event), 1000 );
 			});
 
 			window.addEventListener("beforeunload", function() {
