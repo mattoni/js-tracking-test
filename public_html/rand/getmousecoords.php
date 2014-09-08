@@ -11,7 +11,7 @@
 
 		function init() {
 			document.addEventListener("mousedown", getPosition, false);
-			window.addEventListener('unload', ajaxPostData(JSON.stringify(coords)), false);
+			window.addEventListener('beforeunload', ajaxPostData(JSON.stringify(coords)), false);
 		}
 
 		function getPosition(event) {
