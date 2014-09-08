@@ -18,14 +18,12 @@
 			});
 
 			document.addEventListener("mousemove", function() {
-				var onmousestop = function(event) {
-						movement.push(getEventCoordinates(event));
-					console.log(JSON.stringify(movement));
-						mousetimer = null;
-					};
-
 				clearTimeout( mousetimer );
-				mousetimer = setTimeout(function() { onmousestop(event) }, 1000 );
+				mousetimer = setTimeout(function() {
+					movement.push(getEventCoordinates(event));
+					console.log(JSON.stringify(movement));
+					mousetimer = null;
+				}, 1000 );
 			});
 
 			window.addEventListener("beforeunload", function() {
