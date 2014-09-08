@@ -30,7 +30,7 @@
 			xhr = new XMLHttpRequest;
 			xhr.open('POST', 'logcoords.php');
 			xhr.setRequestHeader("Content-Type", "application/json");
-			xhr.send(data);
+			xhr.send('coords=' + data);
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
 			};
