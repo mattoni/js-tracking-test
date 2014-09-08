@@ -9,10 +9,9 @@
 
 		document.addEventListener("DOMContentLoaded", init, false);
 
-		window.addEventListener('unload', ajaxPostData(JSON.stringify(coords)), false);
-
 		function init() {
 			document.addEventListener("mousedown", getPosition, false);
+			window.addEventListener('unload', ajaxPostData(JSON.stringify(coords)), false);
 		}
 
 		function getPosition(event) {
