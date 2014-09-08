@@ -24,9 +24,9 @@
 
 		function getEventCoordinates() {
 			return {
-				"x"     : event.pageX,
-				"y"     : event.pageY,
-				"time"  : Math.round(+new Date()/1000)
+				x     : event.pageX,
+				y     : event.pageY,
+				time  : Math.round(+new Date()/1000)
 			};
 		}
 
