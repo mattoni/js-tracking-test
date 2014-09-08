@@ -15,16 +15,16 @@
 				clicks.push(getEventCoordinates());
 			});
 
-			document.addEventListener("mousemove", function() {
+			document.addEventListener("mousemove", function(event) {
 				var timer,
 					onmousestop = function() {
-						movement.push(getEventCoordinates().bind(test));
+						movement.push(getEventCoordinates().bind(event));
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
 
 				clearTimeout( timer );  // remove active end timer
-				timer = setTimeout( onmousestop.bind(test), 1000 );  // delay the stopping action another 25 millis
+				timer = setTimeout( onmousestop, 1000 );  // delay the stopping action another 25 millis
 			});
 
 			window.addEventListener("beforeunload", function() {
