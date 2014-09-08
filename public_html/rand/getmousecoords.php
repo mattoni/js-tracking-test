@@ -8,10 +8,10 @@
 		var coords = [];
 
 		document.addEventListener("DOMContentLoaded", init, false);
+		window.onunload = ajaxPostData(JSON.stringify(coords));
 
 		function init() {
 			document.addEventListener("mousedown", getPosition, false);
-			window.onunload = ajaxPostData(JSON.stringify(coords));
 		}
 
 		function getPosition(event) {
@@ -32,6 +32,8 @@
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
 			};
+
+
 		}
 	</script>
 </head>
