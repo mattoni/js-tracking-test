@@ -12,14 +12,13 @@
 			var movement = [];
 
 			document.addEventListener("mousedown", function() {
-				clicks.push(getEventCoordinates(this));
+				clicks.push(getEventCoordinates().bind(this));
 			});
 
 			document.addEventListener("mousemove", function() {
-				var event = this;
 				var timer,
-					onmousestop = function(event) {
-						movement.push(getEventCoordinates(event));
+					onmousestop = function() {
+						movement.push(getEventCoordinates().bind(this));
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
@@ -33,7 +32,7 @@
 			});
 		}
 
-		function getEventCoordinates(event) {
+		function getEventCoordinates() {
 			return {
 				"x"     : event.pageX,
 				"y"     : event.pageY,
