@@ -23,7 +23,6 @@
 				"y"     : event.pageY,
 				"time"  : Math.round(+new Date()/1000)
 			});
-			console.log(JSON.stringify(coords));
 			ajaxPostData(JSON.stringify(coords));
 		}
 
@@ -33,7 +32,6 @@
 			xhr.open('POST', 'logcoords.php', false);
 			xhr.setRequestHeader("Content-Type", "application/json");
 			xhr.send('coords=' + data);
-			console.log('AJAX request sent: ' + data);
 			xhr.onreadystatechange=function() {
 				console.log(xhr.responseText);
 			};
