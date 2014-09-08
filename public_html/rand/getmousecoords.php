@@ -12,7 +12,7 @@
 			var movement = [];
 
 			document.addEventListener("mousedown", function() {
-				clicks.push(getEventCoordinates());
+				//clicks.push(getEventCoordinates());
 			});
 
 			document.addEventListener("mousemove", function() {
