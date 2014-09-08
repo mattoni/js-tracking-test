@@ -16,10 +16,10 @@
 				clicks.push(getEventCoordinates());
 			});
 
-			document.addEventListener("mousemove", function(movement) {
+			document.addEventListener("mousemove", function() {
 				var timer,
 					onmousestop = function() {
-						movement.push(getEventCoordinates());
+						movement.push(getEventCoordinates().bind(this));
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
@@ -33,7 +33,7 @@
 			});
 		}
 
-		function getEventCoordinates() {
+		function getEventCoordinates(event) {
 			return {
 				"x"     : event.pageX,
 				"y"     : event.pageY,
