@@ -19,11 +19,11 @@
 
 			document.addEventListener("mousemove", function() {
 				clearTimeout( mousetimer );
-				mousetimer = setTimeout(function() {
+				mousetimer = setTimeout(function(event) {
 					movement.push(getEventCoordinates(event));
 					console.log(JSON.stringify(movement));
 					mousetimer = null;
-				}, 1000 );
+				}.bind(event), 1000 );
 			});
 
 			window.addEventListener("beforeunload", function() {
