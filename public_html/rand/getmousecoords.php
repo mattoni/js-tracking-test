@@ -12,19 +12,19 @@
 			var movement = [];
 
 			document.addEventListener("mousedown", function() {
-				clicks.push(getEventCoordinates().bind(this));
+				clicks.push(getEventCoordinates());
 			});
 
 			document.addEventListener("mousemove", function() {
 				var timer,
 					onmousestop = function() {
-						movement.push(getEventCoordinates().bind(this));
+						movement.push(getEventCoordinates().bind(event));
 						console.log(JSON.stringify(movement));
 						timer = null;
 					};
 
 				clearTimeout( timer );  // remove active end timer
-				timer = setTimeout( onmousestop, 250 );  // delay the stopping action another 25 millis
+				timer = setTimeout( onmousestop.bind(event), 250 );  // delay the stopping action another 25 millis
 			});
 
 			window.addEventListener("beforeunload", function() {
