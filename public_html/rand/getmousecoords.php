@@ -56,7 +56,7 @@
 			});
 
 			window.addEventListener("beforeunload", function() {
-				  makeCORSRequest(JSON.stringify(Stats.clicks));
+				  makeCORSRequest(JSON.stringify(Stats));
 			});
 		}
 
