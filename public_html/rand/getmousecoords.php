@@ -24,8 +24,9 @@
 
 				mouseTimer = setTimeout(function() {
 					movement.push(getEventCoordinates(mouseEvent));
+					console.log(JSON.stringify(movement));
 					mouseTimer = null;
-				}, 1000 );
+				}, 500 );
 			});
 
 			window.addEventListener("beforeunload", function() {
