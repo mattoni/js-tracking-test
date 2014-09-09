@@ -85,7 +85,7 @@
 			// Response handlers.
 			xhr.onload = function() {
 				var text = xhr.responseText;
-				console.log('Response from CORS request to ' + url + ': ' + text);
+				alert('Response from CORS request to ' + url + ': ' + text);
 			};
 
 			xhr.onerror = function() {
