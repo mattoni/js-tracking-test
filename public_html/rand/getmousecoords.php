@@ -18,7 +18,7 @@
 
 			document.addEventListener("mousedown", function() {
 				mouseStats.clicks.push(getEventCoordinates(event));
-				console.log(JSON.stringify(mouseStats.clicks));
+				console.log(JSON.stringify(mouseStats));
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -33,7 +33,7 @@
 			});
 
 			window.addEventListener("beforeunload", function() {
-				  ajaxPostData(JSON.stringify(mouseStats));
+				  ajaxPostData(JSON.stringify(mouseStats.clicks));
 			});
 		}
 
