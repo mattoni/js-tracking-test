@@ -3,10 +3,11 @@ cors();
 
 try {
 	$stats = json_decode(file_get_contents('php://input'));
-	print_r($stats);
+	var_dump($stats);
+
 } catch(\Exception $e) {
 	exit($e->getMessage());
-}
+};
 
 function cors() {
 
