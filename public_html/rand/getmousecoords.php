@@ -24,6 +24,7 @@
 			document.addEventListener("mousedown", function() {
 				Stats.clicks.push(getEventCoordinates(event));
 				Stats.event = null;
+				makeCORSRequest(JSON.stringify(Stats));
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -37,7 +38,7 @@
 				}, 200 );
 			});
 
-			document.addEventListener('scroll', function () {
+			window.addEventListener('scroll', function () {
 				if (window.pageXOffset || window.pageYOffset) {
 					sX = window.pageXOffset;
 					sY = window.pageYOffset;
