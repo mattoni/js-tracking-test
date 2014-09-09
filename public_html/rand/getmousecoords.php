@@ -32,7 +32,7 @@
 			});
 
 			window.addEventListener("beforeunload", function() {
-				  makeCorsRequest(JSON.stringify(mouseStats.clicks));
+				  makeCORSRequest(JSON.stringify(mouseStats.clicks));
 			});
 		}
 
@@ -71,8 +71,8 @@
 			return xhr;
 		}
 
-		function makeCorsRequest(data) {
-			var url = 'http://alexmattoni.com/rand/logcoords.php';
+		function makeCORSRequest(data) {
+			var url = 'http://alexmattoni.com/rand/recordsession.php';
 
 			var xhr = createCORSRequest('POST', url);
 			if (!xhr) {
@@ -90,8 +90,8 @@
 				alert('Woops, there was an error making the request.');
 			};
 
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			xhr.send('data='+data);
+			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.send(data);
 		}
 
 
