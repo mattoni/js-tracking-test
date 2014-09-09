@@ -8,29 +8,32 @@
 		document.addEventListener("DOMContentLoaded", init, false);
 
 		function init() {
-			var clicks = [];
-			var movement = [];
-			var mouseEvent = {};
-			var mouseTimer;
+			var mouseStats = {
+				"clicks"    : [],
+				"movement"  : [],
+				"event"     : null,
+				"timer"     : null
+
+			};
 
 			document.addEventListener("mousedown", function() {
-				clicks.push(getEventCoordinates(event));
-				console.log(JSON.stringify(clicks));
+				mouseStats.clicks.push(getEventCoordinates(event));
+				console.log(JSON.stringify(mouseStats.clicks));
 			});
 
 			document.addEventListener("mousemove", function() {
-				mouseEvent = event;
+				mouseStats.event = event;
 				clearTimeout( mouseTimer );
 
 				mouseTimer = setTimeout(function() {
-					movement.push(getEventCoordinates(mouseEvent));
-					console.log(JSON.stringify(movement));
-					mouseTimer = null;
+					mouseStats.movement.push(getEventCoordinates(mouseStats.event));
+					console.log(JSON.stringify(mouseStats.movement));
+					mouseStats.timer = null;
 				}, 200 );
 			});
 
 			window.addEventListener("beforeunload", function() {
-				  ajaxPostData(JSON.stringify(clicks));
+				  ajaxPostData(JSON.stringify(mouseStats.clicks));
 			});
 		}
 
