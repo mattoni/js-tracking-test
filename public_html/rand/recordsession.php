@@ -37,4 +37,4 @@ function cors() {
 	}
 }
 
-exit();
+exit('Stats Logged');
