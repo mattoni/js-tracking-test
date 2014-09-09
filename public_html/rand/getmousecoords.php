@@ -23,6 +23,7 @@
 
 			document.addEventListener("mousedown", function() {
 				Stats.clicks.push(getEventCoordinates(event));
+				console.log('Recorded Mouse Click.');
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -31,7 +32,7 @@
 
 				Stats.timer = setTimeout(function() {
 					Stats.movements.push(getEventCoordinates(Stats.event));
-					console.log(JSON.stringify(Stats.movements));
+					console.log('Recorded Mouse Movement.');
 					Stats.timer = null;
 				}, 200 );
 			});
@@ -69,17 +70,6 @@
 			};
 		}
 
-		function ajaxPostData(data) {
-			xhr = new XMLHttpRequest;
-			xhr.open('POST', 'logcoords.php', false);
-			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-			xhr.send('data='+data);
-			xhr.onreadystatechange=function() {
-				console.log(xhr.responseText);
-			};
-		}
-
-		// Create the XHR object.
 		function createCORSRequest(method, url) {
 			var xhr = new XMLHttpRequest();
 			if ("withCredentials" in xhr) {
