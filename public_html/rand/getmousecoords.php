@@ -4,6 +4,11 @@
 <head>
 	<title>Record Events</title>
 	<meta charset="utf-8">
+	<style>
+		body {
+			overflow: scroll;
+		}
+	</style>
 	<script type="text/javascript">
 		document.addEventListener("DOMContentLoaded", init, false);
 
@@ -115,44 +120,6 @@
 </head>
 <body>
 	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-	<span>Click Anywhere!</span>
-
 
 
 </body>
