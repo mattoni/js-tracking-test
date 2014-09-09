@@ -73,6 +73,7 @@
 		}
 
 		function makeCORSRequest(data) {
+			console.log(data);
 			var url = 'http://alexmattoni.com/rand/recordsession.php';
 
 			var xhr = createCORSRequest('POST', url);
