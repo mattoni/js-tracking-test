@@ -26,7 +26,7 @@
 					movement.push(getEventCoordinates(mouseEvent));
 					console.log(JSON.stringify(movement));
 					mouseTimer = null;
-				}, 500 );
+				}, 200 );
 			});
 
 			window.addEventListener("beforeunload", function() {
