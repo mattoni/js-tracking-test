@@ -1,7 +1,11 @@
 <?php
 cors();
 
-file_put_contents('sample_session.json', file_get_contents('php://input'));
+$stats = json_decode(file_get_contents('php://input'));
+
+$stats['client']['ip'] = $_SERVER['REMOTE_ADDR'];
+
+file_put_contents('sample_session.json', json_encode($stats));
 
 function cors() {
 
