@@ -1,9 +1,8 @@
 <?php
-cors();
 
 try {
+	cors();
 	file_put_contents('sample_session.json', modifyStats(file_get_contents('php://input')));
-
 } catch(\Exception $e) {
 	exit($e->getMessage());
 };

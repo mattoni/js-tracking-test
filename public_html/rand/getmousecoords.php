@@ -57,8 +57,6 @@
 			document.addEventListener("mousedown", function() {
 				Stats.clicks.push(getEventCoordinates(event));
 				console.log('Recorded Mouse Click.');
-				delete Stats.tmp;
-				makeCORSRequest(JSON.stringify(Stats)); //TMP
 			});
 
 			document.addEventListener("mousemove", function() {
