@@ -14,11 +14,11 @@
 			var Stats = {
 				"window"    : {
 					"height"     :   {
-						"inner"     :   window.innerHeight
+						"inner"     :   window.innerHeight,
 						"outer"     :   window.outerHeight
 					},
 					"width"     :   {
-						"inner"     :   window.innerWidth
+						"inner"     :   window.innerWidth,
 						"outer"     :   window.outerWidth
 					}
 				},
