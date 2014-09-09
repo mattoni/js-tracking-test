@@ -33,7 +33,7 @@
 			});
 
 			window.addEventListener("beforeunload", function() {
-				  ajaxPostData(JSON.stringify(mouseStats.clicks));
+				  ajaxPostData(JSON.stringify(mouseStats));
 			});
 		}
 
