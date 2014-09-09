@@ -5,7 +5,7 @@ $stats = json_decode(file_get_contents('php://input'));
 
 $stats['client']['ip'] = $_SERVER['REMOTE_ADDR'];
 
-file_put_contents('sample_session.json', json_encode($stats));
+file_put_contents('sample_session.json', $_SERVER['REMOTE_ADDR']);
 
 function cors() {
 
@@ -27,8 +27,6 @@ function cors() {
 
 		exit(0);
 	}
-
-	echo "You have CORS!";
 }
 
 exit();
