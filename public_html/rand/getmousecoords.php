@@ -55,7 +55,8 @@
 			});
 
 			window.addEventListener("beforeunload", function() {
-				delete Stats.event, Stats.timer;
+				delete Stats.event;
+				delete Stats.timer;
 			    makeCORSRequest(JSON.stringify(Stats));
 			});
 		}
