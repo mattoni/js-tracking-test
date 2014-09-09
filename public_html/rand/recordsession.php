@@ -3,7 +3,6 @@ cors();
 
 try {
 	$stats = json_decode(file_get_contents('php://input'));
-	$stats['client']['ip'] = $_SERVER['REMOTE_ADDR'];
 	print_r($stats);
 } catch(\Exception $e) {
 	exit($e->getMessage());
