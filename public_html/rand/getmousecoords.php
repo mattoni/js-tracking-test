@@ -5,9 +5,7 @@
 	<title>Record Events</title>
 	<meta charset="utf-8">
 	<style>
-		body {
-			overflow: scroll;
-		}
+		html,body { height:300%; }
 	</style>
 	<script type="text/javascript">
 		document.addEventListener("DOMContentLoaded", init, false);
@@ -15,8 +13,33 @@
 		function init() {
 			var Stats = {
 				"window"    : {
-					"height"    :   window.innerHeight,
-					"width"     :   window.innerWidth
+					"height"     :   {
+						"inner"     :   window.innerHeight
+						"outer"     :   window.outerHeight
+					},
+					"width"     :   {
+						"inner"     :   window.innerWidth
+						"outer"     :   window.outerWidth
+					}
+				},
+				"screen"    :   {
+					"height"     :   {
+						"available" :   window.screen.availHeight,
+						"total"     :   window.screen.height
+					},
+					"width"     :   {
+						"available" :   window.screen.availWidth,
+						"total"     :   window.screen.width
+					},
+					'depth'     :   {
+						'color'     :   window.screen.colorDepth,
+						'pixel'     :   window.screen.pixelDepth
+					}
+				},
+				"client"    :   {
+					"agent"         :   navigator.userAgent,
+					"language"      :   navigator.language,
+					"cookies"       :   navigator.cookieEnabled
 				},
 				"clicks"    : [],
 				"movements" : [],
