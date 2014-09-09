@@ -14,15 +14,16 @@
 					"width"     :   window.innerWidth
 				},
 				"clicks"    : [],
-				"movement"  : [],
+				"movements" : [],
+				"scrolls"   : [],
 				"event"     : null,
 				"timer"     : null
 			};
 
+
 			document.addEventListener("mousedown", function() {
 				Stats.clicks.push(getEventCoordinates(event));
 				Stats.event = null;
-				makeCORSRequest(JSON.stringify(Stats));
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -30,10 +31,28 @@
 				clearTimeout(Stats.timer );
 
 				Stats.timer = setTimeout(function() {
-					Stats.movement.push(getEventCoordinates(Stats.event));
-					console.log(JSON.stringify(Stats.movement));
+					Stats.movements.push(getEventCoordinates(Stats.event));
+					console.log(JSON.stringify(Stats.movements));
 					Stats.timer = null;
 				}, 200 );
+			});
+
+			window.addEventListener('scroll', function () {
+				if (window.pageXOffset || window.pageYOffset) {
+					sX = window.pageXOffset;
+					sY = window.pageYOffset;
+				} else {
+					sX = document.documentElement.scrollLeft || document.documentElement.scrollLeft;
+					sY = document.documentElement.scrollTop || document.documentElement.scrollTop;
+				}
+
+				Stats.scrolls.push({
+					"x"     :   sX,
+					"y"     :   sY,
+					"time"  :   Math.round(+new Date()/1000)
+				});
+
+				console.log(JSON.stringify(Stats.scrolls));
 			});
 
 			window.addEventListener("beforeunload", function() {
