@@ -34,16 +34,11 @@
 		}
 
 		function getEventCoordinates(event) {
-			console.log(event);
 			return {
 				"x"     : event.pageX,
 				"y"     : event.pageY,
 				"time"  : Math.round(+new Date()/1000)
 			};
-		}
-
-		function recordMouseMovement() {
-
 		}
 
 		function ajaxPostData(data) {
