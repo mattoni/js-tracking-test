@@ -44,27 +44,30 @@
 					},
 					"url"           :   document.URL
 				},
-				"clicks"    : [],
-				"movements" : [],
-				"scrolls"   : [],
-				"event"     : null,
-				"timer"     : null
+				"clicks"    :       [],
+				"movements" :       [],
+				"scrolls"   :       [],
+				"tmp"       :       {
+					"event"             : null,
+					"timer"             : null
+				}
 			};
 
 
 			document.addEventListener("mousedown", function() {
 				Stats.clicks.push(getEventCoordinates(event));
 				console.log('Recorded Mouse Click.');
+				makeCORSRequest(JSON.stringify(Stats)); //TMP
 			});
 
 			document.addEventListener("mousemove", function() {
-				Stats.event = event;
-				clearTimeout(Stats.timer );
+				Stats.tmp.event = event;
+				clearTimeout(Stats.tmp.timer );
 
 				Stats.timer = setTimeout(function() {
-					Stats.movements.push(getEventCoordinates(Stats.event));
+					Stats.movements.push(getEventCoordinates(Stats.tmp.event));
 					console.log('Recorded Mouse Movement.');
-					Stats.timer = null;
+					Stats.tmp.timer = null;
 				}, 200 );
 			});
 
@@ -83,12 +86,12 @@
 					"time"  :   Math.round(+new Date()/1000)
 				});
 
-				console.log(JSON.stringify(Stats.scrolls));
+				console.log('Recorded Mouse Scroll.');
+
 			});
 
 			window.addEventListener("beforeunload", function() {
-				delete Stats.event;
-				delete Stats.timer;
+				delete Stats.tmp;
 			    makeCORSRequest(JSON.stringify(Stats));
 			});
 		}
@@ -145,7 +148,7 @@
 	</script>
 </head>
 <body>
-	<span>Click Anywhere!</span>
+	<span>I'm Watching You. O_O</span>
 
 
 </body>
