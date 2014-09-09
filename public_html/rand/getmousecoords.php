@@ -17,7 +17,7 @@
 
 			document.addEventListener("mousedown", function() {
 				mouseStats.clicks.push(getEventCoordinates(event));
-				makeCorsRequest(JSON.stringify(mouseStats.clicks));
+				makeCORSRequest(JSON.stringify(mouseStats.clicks));
 			});
 
 			document.addEventListener("mousemove", function() {
