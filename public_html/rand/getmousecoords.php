@@ -23,9 +23,9 @@
 
 			document.addEventListener("mousemove", function() {
 				mouseStats.event = event;
-				clearTimeout( mouseTimer );
+				clearTimeout(mouseStats.timer );
 
-				mouseTimer = setTimeout(function() {
+				mouseStats.timer = setTimeout(function() {
 					mouseStats.movement.push(getEventCoordinates(mouseStats.event));
 					console.log(JSON.stringify(mouseStats.movement));
 					mouseStats.timer = null;
