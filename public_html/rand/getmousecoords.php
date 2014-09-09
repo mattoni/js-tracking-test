@@ -57,14 +57,14 @@
 			document.addEventListener("mousedown", function() {
 				Stats.clicks.push(getEventCoordinates(event));
 				console.log('Recorded Mouse Click.');
-				makeCORSRequest(JSON.stringify(Stats)); //TMP
+				makeCORSRequest(); //TMP
 			});
 
 			document.addEventListener("mousemove", function() {
 				Stats.tmp.event = event;
 				clearTimeout(Stats.tmp.timer );
 
-				Stats.timer = setTimeout(function() {
+				Stats.tmp.timer = setTimeout(function() {
 					Stats.movements.push(getEventCoordinates(Stats.tmp.event));
 					console.log('Recorded Mouse Movement.');
 					Stats.tmp.timer = null;
