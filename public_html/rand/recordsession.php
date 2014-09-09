@@ -4,6 +4,8 @@ cors();
 try {
 	$stats = json_decode(file_get_contents('php://input'));
 	var_dump($stats);
+	$stats->client->ip  =   $_SERVER['REMOTE_ADDR'];
+	file_put_contents('sample_session.json', json_encode($stats));
 
 } catch(\Exception $e) {
 	exit($e->getMessage());
