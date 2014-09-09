@@ -1,10 +1,13 @@
 <?php
 cors();
 
-$stats = json_decode(file_get_contents('php://input'));
-
-$stats['client']['ip'] = $_SERVER['REMOTE_ADDR'];
-print_r($stats);
+try {
+	$stats = json_decode(file_get_contents('php://input'));
+	$stats['client']['ip'] = $_SERVER['REMOTE_ADDR'];
+	print_r($stats);
+} catch(\Exception $e) {
+	exit($e->getMessage());
+}
 
 
 file_put_contents('sample_session.json', $_SERVER['REMOTE_ADDR']);
