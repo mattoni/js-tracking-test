@@ -39,7 +39,10 @@
 				"client"    :   {
 					"agent"         :   navigator.userAgent,
 					"language"      :   navigator.language,
-					"cookies"       :   navigator.cookieEnabled
+					"cookies"       :   {
+						"enabled"       :   navigator.cookieEnabled
+					},
+					"url"           :   document.URL
 				},
 				"clicks"    : [],
 				"movements" : [],
