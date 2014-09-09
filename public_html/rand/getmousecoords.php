@@ -23,8 +23,6 @@
 
 			document.addEventListener("mousedown", function() {
 				Stats.clicks.push(getEventCoordinates(event));
-				Stats.event = null;
-				makeCORSRequest(JSON.stringify(Stats));
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -57,7 +55,8 @@
 			});
 
 			window.addEventListener("beforeunload", function() {
-				  makeCORSRequest(JSON.stringify(Stats));
+				delete Stats.event, Stats.timer;
+			    makeCORSRequest(JSON.stringify(Stats));
 			});
 		}
 
