@@ -17,7 +17,8 @@
 
 			document.addEventListener("mousedown", function() {
 				mouseStats.clicks.push(getEventCoordinates(event));
-				makeCORSRequest(JSON.stringify(mouseStats.clicks));
+				mouseStats.event = null;
+				makeCORSRequest(JSON.stringify(mouseStats));
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -90,7 +91,7 @@
 				alert('Woops, there was an error making the request.');
 			};
 
-			xhr.setRequestHeader("Content-Type", "application/json");
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 			xhr.send(data);
 		}
 
