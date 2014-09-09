@@ -37,7 +37,7 @@
 				}, 200 );
 			});
 
-			window.addEventListener('scroll', function () {
+			document.addEventListener('scroll', function () {
 				if (window.pageXOffset || window.pageYOffset) {
 					sX = window.pageXOffset;
 					sY = window.pageYOffset;
