@@ -13,12 +13,10 @@
 				"movement"  : [],
 				"event"     : null,
 				"timer"     : null
-
 			};
 
 			document.addEventListener("mousedown", function() {
 				mouseStats.clicks.push(getEventCoordinates(event));
-				console.log(JSON.stringify(mouseStats));
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -33,7 +31,7 @@
 			});
 
 			window.addEventListener("beforeunload", function() {
-				  ajaxPostData(JSON.stringify(mouseStats.clicks));
+				  makeCorsRequest(JSON.stringify(mouseStats.clicks));
 			});
 		}
 
@@ -54,6 +52,47 @@
 				console.log(xhr.responseText);
 			};
 		}
+
+		// Create the XHR object.
+		function createCORSRequest(method, url) {
+			var xhr = new XMLHttpRequest();
+			if ("withCredentials" in xhr) {
+				// XHR for Chrome/Firefox/Opera/Safari.
+				xhr.open(method, url, true);
+			} else if (typeof XDomainRequest != "undefined") {
+				// XDomainRequest for IE.
+				xhr = new XDomainRequest();
+				xhr.open(method, url);
+			} else {
+				// CORS not supported.
+				xhr = null;
+			}
+			return xhr;
+		}
+
+		function makeCorsRequest(data) {
+			var url = 'http://alexmattoni.com/rand/logcoords.php';
+
+			var xhr = createCORSRequest('POST', url);
+			if (!xhr) {
+				alert('CORS not supported');
+				return;
+			}
+
+			// Response handlers.
+			xhr.onload = function() {
+				var text = xhr.responseText;
+				console.log('Response from CORS request to ' + url + ': ' + text);
+			};
+
+			xhr.onerror = function() {
+				alert('Woops, there was an error making the request.');
+			};
+
+			xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+			xhr.send('data='+data);
+		}
+
 
 	</script>
 </head>
