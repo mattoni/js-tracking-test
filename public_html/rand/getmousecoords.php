@@ -83,8 +83,8 @@
 							"time"  :   Math.round(+new Date()/1000)
 						});
 					},
-					"setEvent"          :   function() {
-						Stats.tmp.event = this;
+					"setEvent"          :   function(event) {
+						Stats.tmp.event = event;
 					},
 					"sendData"             :   function() {
 						delete Stats.tmp;
@@ -96,18 +96,18 @@
 
 
 			document.addEventListener("mousedown", function() {
-				Stats.functions.setEvent().bind(this);
+				Stats.functions.setEvent(this);
 				Stats.functions.recordMouseClick();
 				console.log('Recorded Mouse Click.');
 			});
 
 			document.addEventListener("mousemove", function() {
-				Stats.functions.setEvent().bind(this);
+				Stats.functions.setEvent(this);
 				Stats.functions.recordMouseMove();
 			});
 
 			window.addEventListener('scroll', function () {
-				Stats.functions.setEvent().bind(this);
+				Stats.functions.setEvent(this);
 				Stats.functions.recordMouseScroll();
 				console.log('Recorded Mouse Scroll.');
 			});
