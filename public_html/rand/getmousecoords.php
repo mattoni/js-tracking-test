@@ -5,6 +5,9 @@
 	<title>Record Events</title>
 	<meta charset="utf-8">
 	<style>
+		/*
+		test scrolling
+		*/
 		html,body { height:300%; }
 	</style>
 	<script type="text/javascript">
