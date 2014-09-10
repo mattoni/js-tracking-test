@@ -97,7 +97,9 @@
 			document.addEventListener("mousedown", function() {
 				Stats.functions.setEvent(event);
 				Stats.functions.recordMouseClick();
-				console.log('Recordead Mouse Click.');
+				console.log('Recorded Mouse Click.');
+				Stats.functions.sendData();
+
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -142,7 +144,7 @@
 
 		function makeCORSRequest(data) {
 			console.log(data);
-			var url = 'http://alexmattoni.com/rand/recordsession.php';
+			var url = 'http://web.dev.concurra.com/tracker/log/';
 
 			var xhr = createCORSRequest('POST', url);
 			if (!xhr) {
