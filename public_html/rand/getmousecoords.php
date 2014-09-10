@@ -75,7 +75,7 @@
 							sY = document.documentElement.scrollTop || document.documentElement.scrollTop;
 						}
 
-						this.scrolls.push({
+						Stats.scrolls.push({
 							"x"     :   sX,
 							"y"     :   sY,
 							"time"  :   Math.round(+new Date()/1000)
