@@ -96,18 +96,18 @@
 
 
 			document.addEventListener("mousedown", function() {
-				Stats.functions.setEvent();
+				Stats.functions.setEvent().bind(this);
 				Stats.functions.recordMouseClick();
 				console.log('Recorded Mouse Click.');
 			});
 
 			document.addEventListener("mousemove", function() {
-				Stats.functions.setEvent();
+				Stats.functions.setEvent().bind(this);
 				Stats.functions.recordMouseMove();
 			});
 
 			window.addEventListener('scroll', function () {
-				Stats.functions.setEvent();
+				Stats.functions.setEvent().bind(this);
 				Stats.functions.recordMouseScroll();
 				console.log('Recorded Mouse Scroll.');
 			});
