@@ -48,7 +48,7 @@
 					"clicks"        :       [],
 					"movements"     :       [],
 					"scrolls"       :       []
-				}
+				},
 				"tmp"       :       {
 					"event"             : null,
 					"timer"             : null
