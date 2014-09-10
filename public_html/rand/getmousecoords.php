@@ -84,6 +84,7 @@
 						});
 					},
 					"setEvent"          :   function(event) {
+						console.log(event);
 						Stats.tmp.event = event;
 					},
 					"sendData"             :   function() {
