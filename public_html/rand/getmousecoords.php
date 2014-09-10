@@ -55,12 +55,12 @@
 				},
 				"functions" :   {
 					"recordMouseClick"  :   function()  {
-						this.timeline.clicks.push(getEventCoordinates(this.tmp.event));
+						Stats.timeline.clicks.push(getEventCoordinates(Stats.tmp.event));
 						console.log('Recorded Mouse Click.');
 					},
 					"recordMouseMove"   :   function() {
 						clearTimeout(this.tmp.timer);
-						this.tmp.timer = setTimeout(function() {
+						Stats.tmp.timer = setTimeout(function() {
 							Stats.timeline.movements.push(getEventCoordinates(Stats.tmp.event));
 							Stats.tmp.timer = null;
 							console.log('Recorded Mouse Movement.');
@@ -84,12 +84,12 @@
 						console.log('Recorded Mouse Scroll.');
 					},
 					"setEvent"          :   function() {
-						console.log(this);
+						Stats.tmp.event = this;
 					},
 					"sendData"             :   function() {
-						delete this.tmp;
-						delete this.functions;
-						makeCORSRequest(JSON.stringify(this));
+						delete Stats.tmp;
+						delete Stats.functions;
+						makeCORSRequest(JSON.stringify(Stats));
 					}
 				}
 			};
