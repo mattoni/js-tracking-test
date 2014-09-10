@@ -56,14 +56,12 @@
 				"functions" :   {
 					"recordMouseClick"  :   function()  {
 						Stats.timeline.clicks.push(getEventCoordinates(Stats.tmp.event));
-						console.log('Recorded Mouse Click.');
 					},
 					"recordMouseMove"   :   function() {
 						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
 							Stats.timeline.movements.push(getEventCoordinates(Stats.tmp.event));
 							Stats.tmp.timer = null;
-							console.log('Recorded Mouse Movement.');
 						}, 200 );
 					},
 					recordMouseScroll   :   function() {
@@ -80,8 +78,6 @@
 							"y"     :   sY,
 							"time"  :   Math.round(+new Date()/1000)
 						});
-
-						console.log('Recorded Mouse Scroll.');
 					},
 					"setEvent"          :   function() {
 						Stats.tmp.event = this;
@@ -96,18 +92,20 @@
 
 
 			document.addEventListener("mousedown", function() {
-				Stats.functions.setEvent(event);
+				Stats.functions.setEvent();
 				Stats.functions.recordMouseClick();
+				console.log('Recorded Mouse Click.');
 			});
 
 			document.addEventListener("mousemove", function() {
-				Stats.functions.setEvent(event);
+				Stats.functions.setEvent();
 				Stats.functions.recordMouseMove();
 			});
 
 			window.addEventListener('scroll', function () {
-				Stats.functions.setEvent(event);
+				Stats.functions.setEvent();
 				Stats.functions.recordMouseScroll();
+				console.log('Recorded Mouse Scroll.');
 			});
 
 			window.addEventListener("beforeunload", function() {
