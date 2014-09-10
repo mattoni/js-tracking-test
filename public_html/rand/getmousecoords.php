@@ -85,7 +85,6 @@
 					},
 					"setEvent"          :   function() {
 						console.log(this);
-						this.tmp.event  =   event;
 					},
 					"sendData"             :   function() {
 						delete this.tmp;
