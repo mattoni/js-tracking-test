@@ -84,7 +84,7 @@
 						console.log('Recorded Mouse Scroll.');
 					},
 					"setEvent"          :   function(event) {
-						if(this.tmp.event == null || this.tmp.event != event) {
+						if(typeof this.tmp.event === "undefined" || this.tmp.event != event) {
 							this.tmp.event  =   event;
 						}
 					},
