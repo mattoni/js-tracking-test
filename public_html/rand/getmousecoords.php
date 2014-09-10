@@ -59,7 +59,7 @@
 						console.log('Recorded Mouse Click.');
 					},
 					"recordMouseMove"   :   function() {
-						clearTimeout(this.tmp.timer);
+						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
 							Stats.timeline.movements.push(getEventCoordinates(Stats.tmp.event));
 							Stats.tmp.timer = null;
