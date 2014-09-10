@@ -59,7 +59,6 @@
 				"functions" :   {
 					"recordMouseClick"  :   function()  {
 						Stats.timeline.clicks.push(getEventCoordinates(Stats.tmp.event));
-						console.log(Stats.tmp.event);
 					},
 					"recordMouseMove"   :   function() {
 						clearTimeout(Stats.tmp.timer);
@@ -84,7 +83,6 @@
 						});
 					},
 					"setEvent"          :   function(event) {
-						console.log(event);
 						Stats.tmp.event = event;
 					},
 					"sendData"             :   function() {
