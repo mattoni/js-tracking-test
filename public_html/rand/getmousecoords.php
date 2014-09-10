@@ -44,54 +44,76 @@
 					},
 					"url"           :   document.URL
 				},
-				"clicks"    :       [],
-				"movements" :       [],
-				"scrolls"   :       [],
+				"timeline"  : {
+					"clicks"        :       [],
+					"movements"     :       [],
+					"scrolls"       :       []
+				}
 				"tmp"       :       {
 					"event"             : null,
 					"timer"             : null
+				},
+				"functions" :   {
+					"recordMouseClick"  :   function()  {
+						this.timeline.clicks.push(getEventCoordinates(this.tmp.event));
+						console.log('Recorded Mouse Click.');
+					},
+					"recordMouseMove"   :   function() {
+						clearTimeout(this.tmp.timer);
+						this.tmp.timer = setTimeout(function() {
+							Stats.timeline.movements.push(getEventCoordinates(Stats.tmp.event));
+							Stats.tmp.timer = null;
+							console.log('Recorded Mouse Movement.');
+						}, 200 );
+					},
+					recordMouseScroll   :   function() {
+						if (window.pageXOffset || window.pageYOffset) {
+							sX = window.pageXOffset;
+							sY = window.pageYOffset;
+						} else {
+							sX = document.documentElement.scrollLeft || document.documentElement.scrollLeft;
+							sY = document.documentElement.scrollTop || document.documentElement.scrollTop;
+						}
+
+						this.scrolls.push({
+							"x"     :   sX,
+							"y"     :   sY,
+							"time"  :   Math.round(+new Date()/1000)
+						});
+
+						console.log('Recorded Mouse Scroll.');
+					},
+					"setEvent"          :   function(event) {
+						if(this.tmp.event != event) {
+							this.tmp.event  =   event;
+						}
+					},
+					"sendData"             :   function() {
+						delete this.tmp;
+						delete this.functions;
+						makeCORSRequest(JSON.stringify(this));
+					}
 				}
 			};
 
 
 			document.addEventListener("mousedown", function() {
-				Stats.clicks.push(getEventCoordinates(event));
-				console.log('Recorded Mouse Click.');
+				Stats.functions.setEvent(event);
+				Stats.functions.recordMouseClick();
 			});
 
 			document.addEventListener("mousemove", function() {
-				Stats.tmp.event = event;
-				clearTimeout(Stats.tmp.timer );
-
-				Stats.tmp.timer = setTimeout(function() {
-					Stats.movements.push(getEventCoordinates(Stats.tmp.event));
-					console.log('Recorded Mouse Movement.');
-					Stats.tmp.timer = null;
-				}, 200 );
+				Stats.functions.setEvent(event);
+				Stats.functions.recordMouseMove();
 			});
 
 			window.addEventListener('scroll', function () {
-				if (window.pageXOffset || window.pageYOffset) {
-					sX = window.pageXOffset;
-					sY = window.pageYOffset;
-				} else {
-					sX = document.documentElement.scrollLeft || document.documentElement.scrollLeft;
-					sY = document.documentElement.scrollTop || document.documentElement.scrollTop;
-				}
-
-				Stats.scrolls.push({
-					"x"     :   sX,
-					"y"     :   sY,
-					"time"  :   Math.round(+new Date()/1000)
-				});
-
-				console.log('Recorded Mouse Scroll.');
-
+				Stats.functions.setEvent(event);
+				Stats.functions.recordMouseScroll();
 			});
 
 			window.addEventListener("beforeunload", function() {
-				delete Stats.tmp;
-			    makeCORSRequest(JSON.stringify(Stats));
+				Stats.functions.sendData();
 			});
 		}
 
