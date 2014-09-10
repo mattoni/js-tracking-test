@@ -83,7 +83,7 @@
 
 						console.log('Recorded Mouse Scroll.');
 					},
-					"setEvent"          :   function(event) {
+					"setEvent"          :   function() {
 						console.log(this);
 						this.tmp.event  =   event;
 					},
