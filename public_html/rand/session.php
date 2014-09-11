@@ -147,7 +147,7 @@
 
 		function makeCORSRequest(data) {
 			console.log(data);
-			var url = 'http://web.dev.concurra.com/tracker/v1/log/';
+			var url = 'http://web.dev.concurra.com/api/tracker/v1/log/';
 
 			var xhr = createCORSRequest('POST', url);
 			if (!xhr) {
