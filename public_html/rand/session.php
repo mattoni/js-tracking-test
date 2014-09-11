@@ -50,7 +50,7 @@
 					},
 					"url"           :   document.URL
 				},
-				"timeline"  : {},
+				"timeline"  : [],
 				"tmp"       :       {
 					"event"             : null,
 					"timer"             : null
