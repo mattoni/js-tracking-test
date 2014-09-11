@@ -15,6 +15,9 @@
 
 		function init() {
 			var Stats = {
+				"account"   :   {
+					"token" :  "hoEndE7iLa"
+				}
 				"window"    : {
 					"height"     :   {
 						"inner"     :   window.innerHeight,
@@ -144,7 +147,7 @@
 
 		function makeCORSRequest(data) {
 			console.log(data);
-			var url = 'http://web.dev.concurra.com/tracker/log/Cwrwgno2yt/';
+			var url = 'http://web.dev.concurra.com/tracker/v1/log/';
 
 			var xhr = createCORSRequest('POST', url);
 			if (!xhr) {
