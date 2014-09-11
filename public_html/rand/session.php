@@ -50,23 +50,19 @@
 					},
 					"url"           :   document.URL
 				},
-				"timeline"  : {
-					"clicks"        :       [],
-					"movements"     :       [],
-					"scrolls"       :       []
-				},
+				"timeline"  : {},
 				"tmp"       :       {
 					"event"             : null,
 					"timer"             : null
 				},
 				"functions" :   {
 					"recordMouseClick"  :   function()  {
-						Stats.timeline.clicks.push(getEventCoordinates(Stats.tmp.event));
+						Stats.timeline.push(getEventCoordinates(Stats.tmp.event).push({"type" : "mouse_click"});
 					},
 					"recordMouseMove"   :   function() {
 						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
-							Stats.timeline.movements.push(getEventCoordinates(Stats.tmp.event));
+							Stats.timeline.push(getEventCoordinates(Stats.tmp.event).push({"type" : "mouse_move"}));
 							Stats.tmp.timer = null;
 						}, 200 );
 					},
@@ -79,7 +75,8 @@
 							sY = document.documentElement.scrollTop || document.documentElement.scrollTop;
 						}
 
-						Stats.timeline.scrolls.push({
+						Stats.timeline.push({
+							"type"  :   "mouse_scroll",
 							"x"     :   sX,
 							"y"     :   sY,
 							"time"  :   Math.round(+new Date()/1000)
