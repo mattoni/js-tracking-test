@@ -57,12 +57,16 @@
 				},
 				"functions" :   {
 					"recordMouseClick"  :   function()  {
-						Stats.timeline.push(getEventCoordinates(Stats.tmp.event).push({"type" : "mouse_click"}));
+						var coords = getEventCoordinates(Stats.tmp.event);
+						coords.type = 'mouse_click';
+						Stats.timeline.push(coords);
 					},
 					"recordMouseMove"   :   function() {
 						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
-							Stats.timeline.push(getEventCoordinates(Stats.tmp.event).push({"type" : "mouse_move"}));
+							var coords = getEventCoordinates(Stats.tmp.event);
+							coords.type = 'mouse_move';
+							Stats.timeline.push(coords);
 							Stats.tmp.timer = null;
 						}, 200 );
 					},
