@@ -17,7 +17,7 @@
 			var Stats = {
 				"account"   :   {
 					"token" :  "hoEndE7iLa"
-				}
+				},
 				"window"    : {
 					"height"     :   {
 						"inner"     :   window.innerHeight,
