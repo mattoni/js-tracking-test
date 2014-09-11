@@ -57,7 +57,7 @@
 				},
 				"functions" :   {
 					"recordMouseClick"  :   function()  {
-						Stats.timeline.push(getEventCoordinates(Stats.tmp.event).push({"type" : "mouse_click"});
+						Stats.timeline.push(getEventCoordinates(Stats.tmp.event).push({"type" : "mouse_click"}));
 					},
 					"recordMouseMove"   :   function() {
 						clearTimeout(Stats.tmp.timer);
