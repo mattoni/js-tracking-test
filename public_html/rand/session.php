@@ -76,7 +76,7 @@
 						}
 
 						Stats.timeline.push({
-							"type"  :   "mouse_scroll",
+							"type"  :   'mouse_scroll',
 							"x"     :   sX,
 							"y"     :   sY,
 							"time"  :   Math.round(+new Date()/1000)
