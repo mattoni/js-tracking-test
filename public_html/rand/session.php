@@ -103,7 +103,6 @@
 				Stats.functions.recordMouseClick();
 				console.log('Recorded Mouse Click.');
 				Stats.functions.sendData();
-
 			});
 
 			document.addEventListener("mousemove", function() {
