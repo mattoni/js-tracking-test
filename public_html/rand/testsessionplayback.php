@@ -10,6 +10,8 @@
 		var counts = {
 			clicks : {}
 		};
+		//remove javascript in iframe
+		$("#frameDemo").contents().find('script').remove();
 
 		$.each(data.timeline.clicks, function(index, element) {
 			var path = element.path.replace(/\s+/g, '');
