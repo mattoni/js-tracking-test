@@ -13,7 +13,7 @@ $resolutions = array(
 rmdir($dir);
 mkdir($dir);
 chdir($dir);
-exec('pageres afo.com 1920x1080 ', $output, $response);
+exec('pageres afo.com w3counter ', $output, $response);
 
 print_r($output);
 
