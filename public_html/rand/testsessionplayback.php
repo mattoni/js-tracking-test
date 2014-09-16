@@ -6,8 +6,9 @@
 <body>
 	<iframe sandbox="allow-same-origin" src="http://alexmattoni.com/rand/getmousecoords.php" width="80%" height="600" id='frameDemo'></iframe>
 	<script>
-		var data;
+		var data = {};
 		$.getJSON("sample_session.json", function(result) {
+			console.log(result);
 			data = result;
 		});
 		var counts = {
