@@ -1,19 +1,11 @@
 <?php
 
-$url = 'https://afo.com';
-
 $dir = '/home/amattoni/public_html/rand/images/';
-
-$resolutions = array(
-	'1600x900',
-	'1920x1080',
-	'1372x1843'
-);
 
 rmdir($dir);
 mkdir($dir);
 chdir($dir);
-exec('pageres afo.com w3counter ', $output, $response);
+exec('pageres https://afo.com w3counter ', $output, $response);
 
 print_r($output);
 
