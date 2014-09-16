@@ -1,7 +1,9 @@
 <?php
 
 $url = 'https://afo.com';
+
 $dir = '/home/amattoni/public_html/rand/images/';
+
 $resolutions = array(
 	'1600x900',
 	'1920x1080',
@@ -11,7 +13,7 @@ $resolutions = array(
 rmdir($dir);
 mkdir($dir);
 chdir($dir);
-exec('pageres ' . $url .' 1920x1080 ', $output, $response);
+exec('pageres afo.com 1920x1080 ', $output, $response);
 
 print_r($output);
 
