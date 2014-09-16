@@ -50,7 +50,8 @@
 				"timeline"  : {
 					"clicks"        :       [],
 					"movements"     :       [],
-					"scrolls"       :       []
+					"scrolls"       :       [],
+					"resizes"       :       []
 				},
 				"tmp"       :       {
 					"event"             : null,
@@ -109,6 +110,10 @@
 				Stats.functions.setEvent(event);
 				Stats.functions.recordMouseScroll();
 				console.log('Recorded Mouse Scroll.');
+			});
+
+			window.addEventListener('resize', function() {
+				alert('new height: ' + window.innerHeight + ' new width: ' + window.innerWidth);
 			});
 
 			window.addEventListener("beforeunload", function() {
