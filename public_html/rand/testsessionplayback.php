@@ -14,7 +14,7 @@
 		});
 		$("#frameDemo").load(function() {
 			$.each(data.timeline.clicks, function(index, element) {
-				$("#frameDemo").contents().find(element.path).append(' (' + );//.css("color","#BADA55");
+				$("#frameDemo").contents().find(element.path).append('(' + counts.clicks[element.path] + ' clicks)');//.css("color","#BADA55");
 			});
 		});
 	</script>
