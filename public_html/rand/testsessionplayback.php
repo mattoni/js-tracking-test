@@ -25,7 +25,7 @@
 		$("#frameDemo").contents().find('script').remove();
 
 		$("#frameDemo").load(function() {
-			$.each(count.clicks, function(index, count) {
+			$.each(counts.clicks, function(index, count) {
 				$("#frameDemo").contents().find(index.replace(/\s+/g, ' ')).append(' (' + count + ' clicks)');//.css("color","#BADA55");
 			});
 		});
