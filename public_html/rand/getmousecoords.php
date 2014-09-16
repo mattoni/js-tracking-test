@@ -98,7 +98,6 @@
 				Stats.functions.setEvent(event);
 				console.log(getDomStructure(event));
 				Stats.functions.recordMouseClick();
-				console.log('Recorded Mouse Click.');
 			});
 
 			document.addEventListener("mousemove", function() {
