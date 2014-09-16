@@ -9,7 +9,7 @@ $resolutions = array(
 
 mkdir('/home/amattoni/public_html/rand/images/');
 chdir('/home/amattoni/public_html/rand/images');
-exec('pageres ' . $url .' ' . implode(' ', $resolutions), $output, $response);
+exec('pageres ' . $url .' 1920x1080', $output, $response);
 
 print_r($output);
 
