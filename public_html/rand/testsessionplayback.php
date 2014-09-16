@@ -19,13 +19,13 @@
 					counts.clicks[path] = 1;
 				}
 			});
-		});
-		//remove javascript in iframe
-		$("#frameDemo").contents().find('script').remove();
+			//remove javascript in iframe
+			$("#frameDemo").contents().find('script').remove();
 
-		$("#frameDemo").load(function() {
-			$.each(data.timeline.clicks, function(index, element) {
-				$("#frameDemo").contents().find(element.path).append(' (' + counts.clicks[element.path.replace(/\s+/g, '')] + ' clicks)');//.css("color","#BADA55");
+			$("#frameDemo").load(function() {
+				$.each(data.timeline.clicks, function(index, element) {
+					$("#frameDemo").contents().find(element.path).append(' (' + counts.clicks[element.path.replace(/\s+/g, '')] + ' clicks)');//.css("color","#BADA55");
+				});
 			});
 		});
 	</script>
