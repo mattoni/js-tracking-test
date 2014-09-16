@@ -58,12 +58,12 @@
 				},
 				"functions" :   {
 					"recordMouseClick"  :   function()  {
-						Stats.timeline.clicks.push(getEventCoordinates(Stats.tmp.event));
+						Stats.timeline.clicks.push(getEventStats(Stats.tmp.event));
 					},
 					"recordMouseMove"   :   function() {
 						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
-							Stats.timeline.movements.push(getEventCoordinates(Stats.tmp.event));
+							Stats.timeline.movements.push(getEventStats(Stats.tmp.event));
 							Stats.tmp.timer = null;
 						}, 200 );
 					},
@@ -96,7 +96,6 @@
 
 			document.addEventListener("mousedown", function() {
 				if(getMouseButtonPressed(event) == 'left') {
-					alert(getDomStructure(event));
 					Stats.functions.recordMouseClick();
 				}
 			});
@@ -117,10 +116,11 @@
 			});
 		}
 
-		function getEventCoordinates(event) {
+		function getEventStats(event) {
 			return {
 				"x"     : event.pageX,
 				"y"     : event.pageY,
+				"path"  : getDomStructure(event),
 				"time"  : Math.round(+new Date()/1000)
 			};
 		}
