@@ -11,7 +11,7 @@ $resolutions = array(
 rmdir($dir);
 mkdir($dir);
 chdir($dir);
-exec('pageres [' . $url .' 1920x1080]', $output, $response);
+exec('pageres [ ' . $url .' 1920x1080 ]', $output, $response);
 
 print_r($output);
 
