@@ -11,7 +11,7 @@
 
 		$.each(data.timeline.clicks, function(index, element) {
 			var path = element.path.replace(/\s+/g, '');
-			if(counts.clicks[path]) {
+			if(path in counts.clicks) {
 				counts.clicks[path] ++;
 			} else {
 				counts.clicks[path] = 1;
