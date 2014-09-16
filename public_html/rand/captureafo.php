@@ -8,7 +8,7 @@ $resolutions = array(
 );
 
 mkdir('/home/amattoni/public_html/rand/images/');
-exec('cd /home/amattoni/public_html/rand/images/');
+chdir('/home/amattoni/public_html/rand/images');
 exec('pageres ' . $url .' ' . implode(' ', $resolutions), $output, $response);
 
 print_r($output);
