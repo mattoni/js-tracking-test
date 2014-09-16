@@ -96,8 +96,9 @@
 
 			document.addEventListener("mousedown", function() {
 				Stats.functions.setEvent(event);
+				console.log(getDomStructure(event));
 				Stats.functions.recordMouseClick();
-				console.log('Recordead Mouse Click.');
+				console.log('Recorded Mouse Click.');
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -117,12 +118,30 @@
 		}
 
 		function getEventCoordinates(event) {
-			console.log(event.target);
 			return {
 				"x"     : event.pageX,
 				"y"     : event.pageY,
 				"time"  : Math.round(+new Date()/1000)
 			};
+		}
+
+		function getDomStructure(event) {
+			var rightArrowParents = [],
+				elm,
+				entry;
+
+			for (elm = this.parentNode; elm; elm = elm.parentNode) {
+				entry = elm.tagName.toLowerCase();
+				if (entry === "html") {
+					break;
+				}
+				if (elm.className) {
+					entry += "." + elm.className.replace(/ /g, '.');
+				}
+				rightArrowParents.push(entry);
+			}
+			rightArrowParents.reverse();
+			return rightArrowParents.join(" ");
 		}
 
 		function createCORSRequest(method, url) {
