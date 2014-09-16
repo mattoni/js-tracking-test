@@ -96,7 +96,7 @@
 
 			document.addEventListener("mousedown", function() {
 				Stats.functions.setEvent(event);
-				console.log(getDomStructure(event));
+				alert(getDomStructure(event));
 				Stats.functions.recordMouseClick();
 			});
 
