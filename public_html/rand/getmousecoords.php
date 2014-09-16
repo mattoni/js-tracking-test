@@ -117,6 +117,7 @@
 		}
 
 		function getEventCoordinates(event) {
+			console.log(event.target);
 			return {
 				"x"     : event.pageX,
 				"y"     : event.pageY,
@@ -169,8 +170,8 @@
 </head>
 <body>
 	<span>I'm Watching You. O_O</span>
-
-
+	<div class="myclass">test</div>
+	<p>asdfasfasf</p>
 </body>
 
 </html>
