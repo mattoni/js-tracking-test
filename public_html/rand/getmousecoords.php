@@ -113,7 +113,7 @@
 			});
 
 			window.addEventListener('resize', function() {
-				alert('new height: ' + window.innerHeight + ' new width: ' + window.innerWidth);
+				console.log('new height: ' + window.innerHeight + ' new width: ' + window.innerWidth);
 			});
 
 			window.addEventListener("beforeunload", function() {
