@@ -117,7 +117,7 @@
 				Stats.tmp.timer = setTimeout(function() {
 					console.log('new height: ' + window.innerHeight + ' new width: ' + window.innerWidth);
 					Stats.tmp.timer = null;
-				}, 200 );
+				}, 600 );
 			});
 
 			window.addEventListener("beforeunload", function() {
