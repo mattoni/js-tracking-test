@@ -130,7 +130,7 @@
 				elm,
 				entry;
 
-			for (elm = event.target.parentNode; elm; elm = elm.parentNode) {
+			for (elm = event.target; elm; elm = elm.parentNode) {
 				entry = elm.tagName.toLowerCase();
 				if (entry === "html") {
 					break;
