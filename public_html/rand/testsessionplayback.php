@@ -23,7 +23,7 @@
 			$("#frameDemo").contents().find('script').remove();
 
 			$("#frameDemo").load(function() {
-				$.each(data.timeline.clicks, function(index, element) {
+				$.each(result.timeline.clicks, function(index, element) {
 					$("#frameDemo").contents().find(element.path).append(' (' + counts.clicks[element.path.replace(/\s+/g, '')] + ' clicks)');//.css("color","#BADA55");
 				});
 			});
