@@ -82,6 +82,7 @@
 								},
 								"time"  :   Math.round(+new Date()/1000)
 							});
+							console.log('Recorded window resize');
 							Stats.tmp.timer = null;
 						}, 600 );
 					},
@@ -131,7 +132,6 @@
 
 			window.addEventListener('resize', function() {
 				Stats.functions.recordWindowResize();
-				console.log('Recorded Window Resize');
 			});
 
 			window.addEventListener("beforeunload", function() {
