@@ -6,13 +6,17 @@
 <body>
 	<iframe sandbox="allow-same-origin" src="http://alexmattoni.com/rand/getmousecoords.php" width="80%" height="600" id='frameDemo'></iframe>
 	<script>
+		var data;
+		$.getJSON("sample_session.json", function(result) {
+			data = result;
+		});
 		var counts = {
 			clicks : {}
 		};
 		//remove javascript in iframe
 		$("#frameDemo").contents().find('script').remove();
 
-		$.each($.getJSON( "sample_session.json").timeline.clicks, function(index, element) {
+		$.each(data.timeline.clicks, function(index, element) {
 			var path = element.path.replace(/\s+/g, '');
 			if(path in counts.clicks) {
 				counts.clicks[path] ++;
