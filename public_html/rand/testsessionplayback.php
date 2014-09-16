@@ -12,20 +12,21 @@
 
 		$.getJSON("sample_session.json", function(result) {
 			$.each(result.timeline.clicks, function(index, element) {
-				var path = element.path.replace(/\s+/g, '');
+				var path = element.path.replace(/\s+/g, '>');
 				if(path in counts.clicks) {
 					counts.clicks[path] ++;
 				} else {
 					counts.clicks[path] = 1;
 				}
 			});
-			//remove javascript in iframe
-			$("#frameDemo").contents().find('script').remove();
+		});
 
-			$("#frameDemo").load(function() {
-				$.each(result.timeline.clicks, function(index, element) {
-					$("#frameDemo").contents().find(element.path).append(' (' + counts.clicks[element.path.replace(/\s+/g, '')] + ' clicks)');//.css("color","#BADA55");
-				});
+		//remove javascript in iframe
+		$("#frameDemo").contents().find('script').remove();
+
+		$("#frameDemo").load(function() {
+			$.each(count.clicks, function(index, count) {
+				$("#frameDemo").contents().find(index.replace(/\s+/g, ' ').append(' (' + count + ' clicks)');//.css("color","#BADA55");
 			});
 		});
 	</script>
