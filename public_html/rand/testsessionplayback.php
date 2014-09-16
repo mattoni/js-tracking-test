@@ -10,7 +10,12 @@
 		var counts = {};
 
 		$.each(data.timeline.clicks, function(index, element) {
-			counts.clicks[element.path.replace(/\s+/g, '')] ++;
+			var path = element.path.replace(/\s+/g, '');
+			if(counts.clicks[path]) {
+				counts.clicks[path] ++;
+			} else {
+				counts.clicks[path] = 1;
+			}
 		});
 		$("#frameDemo").load(function() {
 			$.each(data.timeline.clicks, function(index, element) {
