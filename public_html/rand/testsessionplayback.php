@@ -23,11 +23,9 @@
 						counts.clicks[path] = 1;
 					}
 				});
-			});
-
-
-			$.each(counts.clicks, function(index, count) {
-				$("#frameDemo").contents().find(index.replace(/\s+/g, ' ')).append(' (' + count + ' clicks)');//.css("color","#BADA55");
+				$.each(counts.clicks, function(index, count) {
+					$("#frameDemo").contents().find(index.replace(/\s+/g, ' ')).append(' (' + count + ' clicks)');//.css("color","#BADA55");
+				});
 			});
 		});
 	</script>
