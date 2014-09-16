@@ -58,15 +58,32 @@
 					"timer"             : null
 				},
 				"functions" :   {
-					"recordMouseClick"  :   function()  {
+					recordMouseClick  :   function()  {
 						Stats.timeline.clicks.push(getEventStats(Stats.tmp.event));
 					},
-					"recordMouseMove"   :   function() {
+					recordMouseMove   :   function() {
 						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
 							Stats.timeline.movements.push(getEventStats(Stats.tmp.event));
 							Stats.tmp.timer = null;
 						}, 200 );
+					},
+					recordWindowResize  :  function() {
+						clearTimeout(Stats.tmp.timer);
+						Stats.tmp.timer = setTimeout(function() {
+							Stats.timeline.resizes.push({
+								"height"     :   {
+									"inner"     :   window.innerHeight,
+									"outer"     :   window.outerHeight
+								},
+								"width"     :   {
+									"inner"     :   window.innerWidth,
+									"outer"     :   window.outerWidth
+								},
+								"time"  :   Math.round(+new Date()/1000)
+							});
+							Stats.tmp.timer = null;
+						}, 600 );
 					},
 					recordMouseScroll   :   function() {
 						if (window.pageXOffset || window.pageYOffset) {
@@ -83,10 +100,10 @@
 							"time"  :   Math.round(+new Date()/1000)
 						});
 					},
-					"setEvent"          :   function(event) {
+					setEvent         :   function(event) {
 						Stats.tmp.event = event;
 					},
-					"sendData"             :   function() {
+					sendData             :   function() {
 						delete Stats.tmp;
 						delete Stats.functions;
 						makeCORSRequest(JSON.stringify(Stats));
@@ -113,11 +130,8 @@
 			});
 
 			window.addEventListener('resize', function() {
-				clearTimeout(Stats.tmp.timer);
-				Stats.tmp.timer = setTimeout(function() {
-					console.log('new height: ' + window.innerHeight + ' new width: ' + window.innerWidth);
-					Stats.tmp.timer = null;
-				}, 600 );
+				Stats.functions.recordWindowResize();
+				console.log('Recorded Window Resize');
 			});
 
 			window.addEventListener("beforeunload", function() {
