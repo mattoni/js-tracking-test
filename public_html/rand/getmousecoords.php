@@ -95,9 +95,10 @@
 
 
 			document.addEventListener("mousedown", function() {
-				Stats.functions.setEvent(event);
-				alert(getDomStructure(event));
-				Stats.functions.recordMouseClick();
+				if(getMouseButtonPressed(event) == 'left') {
+					alert(getDomStructure(event));
+					Stats.functions.recordMouseClick();
+				}
 			});
 
 			document.addEventListener("mousemove", function() {
@@ -122,6 +123,23 @@
 				"y"     : event.pageY,
 				"time"  : Math.round(+new Date()/1000)
 			};
+		}
+
+		function getMouseButtonPressed(event) {
+			var button;
+
+			if (event.which == null) {
+				/* IE case */
+				button = (event.button < 2) ? "left" :
+					((event.button == 4) ? "middle" : "right");
+			}
+			else {
+				/* All others */
+				button= (event.which < 2) ? "left" :
+					((event.which == 2) ? "middle" : "right");
+			}
+
+			return button;
 		}
 
 		function getDomStructure(event) {
