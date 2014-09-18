@@ -127,12 +127,7 @@
 					"token"         :   'hoEndE7iLa',
 					"tracking_id"    :   Session()
 				},
-				"timeline"  : {
-					"clicks"        :       [],
-					"movements"     :       [],
-					"scrolls"       :       [],
-					"resizes"       :       []
-				},
+				"timeline"  : [],
 				"tmp"       :       {
 					"event"             : null,
 					"timer"             : null
