@@ -197,7 +197,6 @@
 			document.addEventListener("mousedown", function() {
 				if(getMouseButtonPressed(event) == 'left') {
 					Stats.functions.recordMouseClick();
-					Stats.sendData();
 				}
 			});
 
