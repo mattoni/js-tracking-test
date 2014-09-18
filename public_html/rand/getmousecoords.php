@@ -13,7 +13,79 @@
 	<script type="text/javascript">
 		document.addEventListener("DOMContentLoaded", init, false);
 
+		/**
+		 * Cookie Object
+		 */
+		function Cookie(name) {
+			this.name = name;
+
+			this.set = function(data, expire) {
+				if (expire) {
+					var expire_string;
+					var date = new Date();
+					date.setTime(date.getTime() + (expire * 60 * 1000));
+					expire_string = "; expires=" + expire.toGMTString();
+				} else {
+					expire_string = "";
+				}
+				document.cookie = this.name+"="+data+expire_string+"; path=/";
+			};
+
+			this.read = function() {
+				var name = this.name + "=";
+				var ca = document.cookie.split(';');
+				for(var i=0;i < ca.length;i++) {
+					var c = ca[i];
+					while (c.charAt(0)==' ') c = c.substring(1,c.length);
+					if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+				}
+				return null;
+			};
+
+			this.erase = function() {
+				this.set("", -1);
+			};
+		}
+
+
+		function Session() {
+			var cookie = new Cookie('session');
+
+			if(cookie.read() == null) {
+				generate();
+
+			} else if(JSON.parse(cookie.read())['activity'] < Math.round(+new Date()/1000) - 600) {
+				/*
+				 * 10 minute expiration
+				 */
+				generate();
+			} else if(JSON.parse(cookie.read())['activity'] < Math.round(+new Date()/1000) - 10) {
+				update();
+			}
+
+			function generate() {
+				var session = {
+					"id"        : generateId(),
+					"activity"  : Math.round(+new Date()/1000)
+				};
+
+				cookie.set(JSON.stringify(session), 10);
+			}
+
+			function update() {
+				var session = JSON.parse(cookie.read());
+
+				session.activity = Math.round(+new Date()/1000);
+
+				cookie.set(JSON.stringify(session), 10);
+			}
+		}
+
 		function init() {
+			alert(new Cookie('session').read());
+
+			Session();
+
 			var Stats = {
 				"window"    : {
 					"height"     :   {
@@ -41,6 +113,7 @@
 				},
 				"client"    :   {
 					"agent"         :   navigator.userAgent,
+					"referrer"      :   document.referrer.split('/')[2],
 					"language"      :   navigator.language,
 					"cookies"       :   {
 						"enabled"       :   navigator.cookieEnabled
@@ -112,7 +185,6 @@
 				}
 			};
 
-
 			document.addEventListener("mousedown", function() {
 				if(getMouseButtonPressed(event) == 'left') {
 					Stats.functions.recordMouseClick();
@@ -182,6 +254,16 @@
 			}
 			rightArrowParents.reverse();
 			return rightArrowParents.join(" ");
+		}
+
+		function generateId() {
+			var text = "";
+			var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+			for( var i=0; i < 5; i++ )
+				text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+			return text;
 		}
 
 		function createCORSRequest(method, url) {
