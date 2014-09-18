@@ -139,19 +139,24 @@
 				},
 				"functions" :   {
 					recordMouseClick  :   function()  {
-						Stats.timeline.clicks.push(getEventStats(Stats.tmp.event));
+						var coords = getEventStats(Stats.tmp.event);
+						coords.type = 'mouse.click';
+						Stats.timeline.push(coords);
 					},
 					recordMouseMove   :   function() {
 						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
-							Stats.timeline.movements.push(getEventStats(Stats.tmp.event));
+							var coords = getEventStats(Stats.tmp.event);
+							coords.type = 'mouse.move';
+							Stats.timeline.push(coords);
 							Stats.tmp.timer = null;
 						}, 200 );
 					},
 					recordWindowResize  :  function() {
 						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
-							Stats.timeline.resizes.push({
+							Stats.timeline.push({
+								"type"  :   'window.resize',
 								"height"     :   {
 									"inner"     :   window.innerHeight,
 									"outer"     :   window.outerHeight
@@ -166,7 +171,7 @@
 							Stats.tmp.timer = null;
 						}, 600 );
 					},
-					recordMouseScroll   :   function() {
+					recordWindowScroll   :   function() {
 						if (window.pageXOffset || window.pageYOffset) {
 							sX = window.pageXOffset;
 							sY = window.pageYOffset;
@@ -175,7 +180,8 @@
 							sY = document.documentElement.scrollTop || document.documentElement.scrollTop;
 						}
 
-						Stats.timeline.scrolls.push({
+						Stats.timeline.push({
+							"type"  :   'window.scroll',
 							"x"     :   sX,
 							"y"     :   sY,
 							"time"  :   Math.round(+new Date()/1000)
@@ -207,8 +213,8 @@
 
 			window.addEventListener('scroll', function () {
 				Stats.functions.setEvent(event);
-				Stats.functions.recordMouseScroll();
-				console.log('Recorded Mouse Scroll.');
+				Stats.functions.recordWindowScroll();
+				console.log('Recorded Window Scroll.');
 			});
 
 			window.addEventListener('resize', function() {
