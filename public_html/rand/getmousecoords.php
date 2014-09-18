@@ -24,7 +24,7 @@
 					var expire_string;
 					var date = new Date();
 					date.setTime(date.getTime() + (expire * 60 * 1000));
-					expire_string = "; expires=" + expire.toGMTString();
+					expire_string = "; expires=" + expire.toUTCString();
 				} else {
 					expire_string = "";
 				}
