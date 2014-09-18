@@ -21,7 +21,6 @@
 
 			this.set = function(data, expire) {
 				if (expire) {
-					alert(expire.toUTCString);
 					var expire_string = null;
 					var date = new Date();
 					date.setTime(date.getTime() + (expire * 60 * 1000));
@@ -66,7 +65,7 @@
 
 			function generate() {
 				var session = {
-					"id"        : generateId(),
+					"id"        : generateId(10),
 					"activity"  : Math.round(+new Date()/1000)
 				};
 
@@ -257,11 +256,11 @@
 			return rightArrowParents.join(" ");
 		}
 
-		function generateId() {
+		function generateId(size) {
 			var text = "";
 			var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-			for( var i=0; i < 5; i++ )
+			for( var i=0; i < size; i++ )
 				text += possible.charAt(Math.floor(Math.random() * possible.length));
 
 			return text;
