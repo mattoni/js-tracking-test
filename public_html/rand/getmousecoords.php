@@ -21,11 +21,11 @@
 
 			this.set = function(data, expire) {
 				if (expire) {
-					alert(expire.toUTCString());
+					alert(expire.toUTCString);
 					var expire_string = null;
 					var date = new Date();
 					date.setTime(date.getTime() + (expire * 60 * 1000));
-					expire_string = "; expires=" + expire.toUTCString();
+					expire_string = "; expires=" + expire.toUTCString;
 				} else {
 					expire_string = "";
 				}
