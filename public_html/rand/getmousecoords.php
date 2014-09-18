@@ -21,7 +21,7 @@
 
 			this.set = function(data, expire) {
 				if (expire) {
-					var expire_string = null;
+					var expire_string;
 					var date = new Date();
 					date.setTime(date.getTime() + (expire * 60 * 1000));
 					expire_string = "; expires=" + expire.toUTCString;
@@ -48,8 +48,12 @@
 		}
 
 
+		/**
+		 * Manage the session
+		 */
 		function Session() {
 			var cookie = new Cookie('session');
+			var id = null;
 
 			if(cookie.read() == null) {
 				generate();
@@ -64,8 +68,9 @@
 			}
 
 			function generate() {
+				id = generateId(10);
 				var session = {
-					"id"        : generateId(10),
+					"id"        : id,
 					"activity"  : Math.round(+new Date()/1000)
 				};
 
@@ -76,17 +81,18 @@
 				var session = JSON.parse(cookie.read());
 
 				session.activity = Math.round(+new Date()/1000);
+				id = session.id;
 
 				cookie.set(JSON.stringify(session), 10);
 			}
+
+			return id;
 		}
 
 		function init() {
-			alert(new Cookie('session').read());
-
-			Session();
-
 			var Stats = {
+				"start"     : Math.round(+new Date()/1000),
+				"uri"           :   document.URL,
 				"window"    : {
 					"height"     :   {
 						"inner"     :   window.innerHeight,
@@ -111,14 +117,15 @@
 						'pixel'     :   window.screen.pixelDepth
 					}
 				},
-				"client"    :   {
+				"user"    :   {
 					"agent"         :   navigator.userAgent,
 					"referrer"      :   document.referrer.split('/')[2],
 					"language"      :   navigator.language,
 					"cookies"       :   {
 						"enabled"       :   navigator.cookieEnabled
 					},
-					"url"           :   document.URL
+					"token"         :   'hoEndE7iLa',
+					"tracking_id"    :   Session()
 				},
 				"timeline"  : {
 					"clicks"        :       [],
@@ -180,6 +187,8 @@
 					sendData             :   function() {
 						delete Stats.tmp;
 						delete Stats.functions;
+						Stats.finish = Math.round(+new Date()/1000);
+
 						makeCORSRequest(JSON.stringify(Stats));
 					}
 				}
@@ -284,7 +293,7 @@
 
 		function makeCORSRequest(data) {
 			console.log(data);
-			var url = 'http://alexmattoni.com/rand/recordsession.php';
+			var url = 'http://web.dev.concurra.com/api/tracker/v1/log/';
 
 			var xhr = createCORSRequest('POST', url);
 			if (!xhr) {
