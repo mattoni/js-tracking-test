@@ -21,7 +21,8 @@
 
 			this.set = function(data, expire) {
 				if (expire) {
-					var expire_string;
+					alert(expire.toUTCString());
+					var expire_string = null;
 					var date = new Date();
 					date.setTime(date.getTime() + (expire * 60 * 1000));
 					expire_string = "; expires=" + expire.toUTCString();
