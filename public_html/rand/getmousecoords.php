@@ -26,7 +26,7 @@
 		</nav>
 		<div class="container row">
 			<div class="col-3" id="mainimg">
-				<img src="resources/img/global/jake.jpg" />
+				<img src="http://s3-ec.buzzfed.com/static/2014-07/18/10/enhanced/webdr09/anigif_enhanced-buzz-22799-1405693809-7.gif" />
 			</div>
 			<div class="col-9" id="intro">
 				<h1>Hello, I'm Jake Warner.</h1>
@@ -43,12 +43,12 @@
 	<div id="history">
 		<div class="container row">
 			<div class="col-4">
-				<a href="http://petrichorllc.com"><img src="resources/img/global/petrichor-white.png" alt="Petrichor" title="Petrichor" /></a>
+				<a href="http://petrichorllc.com"><img src="http://s3-ec.buzzfed.com/static/2014-07/18/10/enhanced/webdr04/anigif_enhanced-buzz-32136-1405694697-10.gif" alt="Petrichor" title="Petrichor" /></a>
 				<h5>CEO, Founder</h5>
 				<h6>January 2013 - Present</h6>
 			</div>
 			<div class="col-6">
-				<a href="http://singlehop.com"><img src="resources/img/global/singlehop.png" alt="SingleHop" title="SingleHop" /></a>
+				<a href="http://singlehop.com"><img src="http://www.pbh2.com/wordpress/wp-content/uploads/2013/11/shibe-gifs-interneting.gif" alt="SingleHop" title="SingleHop" /></a>
 				<h5>Senior Systems Engineer/Lead Developer of LEAP3</h5>
 				<h6>August 2011 - May 2013</h6>
 			</div>
