@@ -138,11 +138,11 @@
 						coords.type = 'mouse.click';
 						Stats.timeline.push(coords);
 					},
-					recordMouseMove   :   function() {
+					recordMouseHover   :   function() {
 						clearTimeout(Stats.tmp.timer);
 						Stats.tmp.timer = setTimeout(function() {
 							var coords = getEventStats(Stats.tmp.event);
-							coords.type = 'mouse.move';
+							coords.type = 'mouse.hover';
 							Stats.timeline.push(coords);
 							Stats.tmp.timer = null;
 						}, 200 );
@@ -203,7 +203,7 @@
 
 			document.addEventListener("mousemove", function() {
 				Stats.functions.setEvent(event);
-				Stats.functions.recordMouseMove();
+				Stats.functions.recordMouseHover();
 			});
 
 			window.addEventListener('scroll', function () {
