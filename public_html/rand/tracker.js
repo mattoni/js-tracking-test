@@ -244,14 +244,82 @@ function getDomStructure(event) {
 		if (entry === "html") {
 			break;
 		}
+
+		if(elm.id) {
+			entry +='#'+elm.id;
+		} else {
+			entry += ":eq("+ function(elm) {
+				var i = 1,
+					prev = elm.previousElementSibling;
+
+				if (prev) {
+					do ++i;
+					while (prev = prev.previousElementSibling);
+				} else {
+					while (elm = node.previousSibling) {
+						if (elm.nodeType === 1) {
+							++i;
+						}
+					}
+				}
+				return i;
+			} + ")";
+		}
+
+		/*
 		if (elm.className) {
 			entry += "." + elm.className.replace(/ /g, '.');
 		}
+		*/
 		rightArrowParents.push(entry);
 	}
 	rightArrowParents.reverse();
+	console.log(rightArrowParents.join(" "));
 	return rightArrowParents.join(" ");
 }
+
+$.fn.extend({
+	/**
+	 * Return a valid jQuery selector path to an object from a
+	 container
+	 * root - specify a root element from which to generate the path
+	 *
+	 * If no root is specified, then path is given from the document
+	 root
+	 * If root is same as element, no path is returned (undefined)
+	 * If root is not actually a parent of this element, then no path
+	 is
+	 * returned (undefined);
+	 *
+	 */
+	path : function() {
+		var r;
+		if(root) {
+			r = root[0];
+		} else {
+			r = $()[0];
+		}
+		var el = this[0];
+		if(el) {
+			var path = "";
+			while(el && el.parentNode && el != el.parentNode) {
+				if(el.nodeType == 9) {
+					// reached document node, no root provided.
+					return;
+				}
+				if (el.id){
+					path = el.tagName.toLowerCase()+"#"+el.id+""+path;
+					break;
+				} else {
+					path = el.tagName.toLowerCase()+":eq("+
+					$(el).prevAll(el.tagName).size()+") "+path;
+				}
+				var el = el.parentNode;
+			}
+		}
+		return path;
+	}
+});
 
 function generateId(size) {
 	var text = "";
