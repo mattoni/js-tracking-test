@@ -239,6 +239,23 @@ function getDomStructure(event) {
 		elm,
 		entry;
 
+	function getIndex(elm) {
+		var i = 1,
+			prev = elm.previousElementSibling;
+
+		if (prev) {
+			do ++i;
+			while (prev = prev.previousElementSibling);
+		} else {
+			while (elm = elm.previousSibling) {
+				if (elm.nodeType === 1) {
+					++i;
+				}
+			}
+		}
+		return i;
+	}
+
 	for (elm = event.target; elm; elm = elm.parentNode) {
 		entry = elm.tagName.toLowerCase();
 		if (entry === "html") {
@@ -248,22 +265,7 @@ function getDomStructure(event) {
 		if(elm.id) {
 			entry +='#'+elm.id;
 		} else {
-			entry += ":eq("+ function(elm) {
-				var i = 1,
-					prev = elm.previousElementSibling;
-
-				if (prev) {
-					do ++i;
-					while (prev = prev.previousElementSibling);
-				} else {
-					while (elm = node.previousSibling) {
-						if (elm.nodeType === 1) {
-							++i;
-						}
-					}
-				}
-				return i;
-			} + ")";
+			entry += ":eq("+ getIndex(elm) + ")";
 		}
 
 		/*
