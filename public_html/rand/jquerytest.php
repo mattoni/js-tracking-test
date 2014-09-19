@@ -15,7 +15,7 @@
 
 		// Applies red text color to descendants of <ul class="nav">
 		// for each <li> that is the second child of its parent
-		$( "body:eq(2) ul:eq(1) li:eq(2)" ).css( "color", "red" );
+		$( "ul:eq(1) li:eq(2)" ).css( "color", "red" );
 	</script>
 </head>
 <body>
