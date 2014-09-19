@@ -1,0 +1,98 @@
+body {
+	color: rgb(200, 200, 200);
+	background-color: rgb(10, 10, 10);
+	background-image: url('http://jakewarner.com/resources/img/global/bg2.jpg');
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-attachment: fixed;
+	background-size: cover;
+}
+
+body .container {
+	max-width: 1100px;
+}
+
+nav {
+	text-align: right;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+}
+
+nav ul li {
+	float: right;
+	font-size: 2rem;
+	background-color: rgba(10, 10, 10, 0.65);
+	color: rgb(0, 0, 0);
+	border-radius: 100%;
+	width: 36px;
+	margin: 0rem 0.5rem;
+	text-align: center;
+	padding: 3px;
+}
+
+nav ul li a {
+	display: block;
+}
+
+header {
+	padding-top: 1.5rem;
+	padding-bottom: 10rem;
+}
+
+a {
+	color: rgb(0, 153, 255);
+	text-decoration: none;
+}
+
+a:hover {
+	color: rgb(0, 102, 204);
+	text-decoration: none;
+}
+
+h1, h2, h3 {
+	font-family: Oswald;
+	color: #fff;
+	text-shadow: 0.1rem 0.1rem 0.2rem rgba(0,0,0,1);
+}
+
+div#mainimg img {
+	border-radius: 50%;
+	border: 5px solid rgba(10,10,10, .3);
+}
+
+div#intro h1 {
+	margin-top: 5rem;
+	font-size: 7rem;
+}
+
+div#intro h2 {
+	color: rgb(220, 220, 220);
+}
+
+div#history {
+	background-color: rgba(10, 10, 10, .95);
+	margin-bottom: 4rem;
+}
+
+div#history > div > div {
+	padding: 5rem 1rem;
+	min-width: 25rem;
+}
+
+div#history img {
+	max-height: 34rem;
+	width: auto;
+	height: 4rem;
+	margin-bottom: 2rem;
+}
+
+div.center {
+	text-align: center;
+}
+
+i.big {
+	font-size: 5rem;
+}
