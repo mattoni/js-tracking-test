@@ -262,9 +262,9 @@ function getDomStructure(event) {
 			break;
 		}
 
-		if(elm.id && (entry !== 'body')) {
+		if(elm.id) {
 			entry +='#'+elm.id;
-		} else {
+		} else if(entry !== 'body') {
 			entry += ":eq("+ getIndex(elm) + ")";
 		}
 
