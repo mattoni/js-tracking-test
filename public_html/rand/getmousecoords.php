@@ -9,12 +9,11 @@
 	<link href="resources/css/global/default.css" type="text/css" rel="stylesheet" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-	<script language='javascript' src='//web.dev.concurra.com/tracker/tracker.js'></script>
+	<script async language='javascript' src='//web.dev.concurra.com/tracker/tracker.js'></script>
 	<script>
-		__concurra = new __concurra_tracker();
-		__concurra.setToken('test');
-		__concurra.init();
-		console.log(__concurra.token);
+		__tracker = new __concurra_tracker();
+		__tracker.setToken('hoEndE7iLa');
+		__tracker.init();
 	</script>
 
 </head>
