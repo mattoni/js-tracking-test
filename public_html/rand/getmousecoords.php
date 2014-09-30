@@ -11,6 +11,7 @@
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 	<script async src='//web.dev.concurra.com/tracker/tracker.js'></script>
 	<script>
+		__concurra = new __concurra_tracker();
 		__concurra().setToken('hoEndE7iLa');
 		__concurra().init();
 	</script>
