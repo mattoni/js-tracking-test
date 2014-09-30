@@ -13,6 +13,7 @@
 	<script>
 		__tracker = new __concurra_tracker();
 		__tracker.setToken('hoEndE7iLa');
+		__tracker.enableDebug();
 		__tracker.init();
 	</script>
 
