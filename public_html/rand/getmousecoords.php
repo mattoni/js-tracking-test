@@ -5,7 +5,7 @@
 	<title>Jake Warner</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="//limestone.io/trunk/bundle/framework/css/import.css" type="text/css" />
+	<link rel="stylesheet" href="http://limestone.io/trunk/css/import.css" type="text/css" />
 	<link href="resources/css/global/default.css" type="text/css" rel="stylesheet" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
