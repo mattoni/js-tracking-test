@@ -14,7 +14,6 @@
 		__tracker = new __concurra_tracker();
 		__tracker.setToken('Cwrwgno2yt');
 		__tracker.enableDebug();
-		__tracker.disableVariations();
 		__tracker.init();
 	</script>
 
