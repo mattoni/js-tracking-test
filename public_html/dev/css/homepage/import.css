@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+/*
+
+This import is for elements that appear on only one page. In this case, the homepage. An intro is a good example of an
+element that we know we won't include anywhere else.
+
+*/
+
+@import url("intro.css") screen;

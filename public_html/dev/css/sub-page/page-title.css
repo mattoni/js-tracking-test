@@ -1,0 +1,10 @@
+.page-title {
+	margin-top: -5rem;
+	background: rgba(0,0,0,.05);
+	padding: 4rem 0;
+	margin-bottom: 5rem;
+	border-bottom: .1rem solid rgba(0,0,0,.1);
+}
+.page-title h2 {
+	margin: 0 0 1rem 0;
+}

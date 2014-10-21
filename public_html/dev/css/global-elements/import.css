@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/*
+
+This import is for elements that could appear anywhere on the site and need to be universal in scope. It's not
+necessarily a global default restyling, and it's not imperative to render the website, so we call it a global element.
+These can be things like newsletter forms, login forms, calls to action. Things that may need to be included anywhere.
+
+The example I gave here is a list of blog items. Maybe we want it on the homepage, maybe we don't.
+
+*/
+
+@import url("blog-list.css") screen;

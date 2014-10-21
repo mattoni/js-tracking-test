@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+/*
+
+These are styles that will end up being used on every page or items that need to be available irrespective of the page.
+They typically include files that govern typography, font includes, and styles that alter the default browser styles for
+tables, forms, etc.
+
+*/
+
+@import url("defaults.css") screen;    /* Sets our box model and ensures browser consistency across certain elements */
+
+@import url("fonts.css") screen;       /* Imports all the fonts we use for this particular design. */
+
+@import url("typography.css") screen;  /* Controls the typography of the page including spacing typographical elements
+                                          like links, blockquotes, or list items. */
+
+@import url("fontawesome.css") screen; /* Controls the icons for the site. We use FontAwesome because it's awesome. */
+
+@import url("forms.css") screen;       /* Standardizes the form elements across the site. */
+
+@import url("media.css") screen;       /* Styles for the media elements, video, audio, figures, pictures, etc. */
+
+@import url("scaffold.css") screen;    /* This is our grid system, one of the most important components in laying out content. */
+
+@import url("tables.css") screen;      /* Styles for tables */
+
+@import url("code.css") screen;        /* Styles for the code element, which is technically a typographical element, but it can
+                                          be very style intensive, so I like to separate it out. */
+
+@import url("header.css") screen;      /* Controls the header of the website. */
+
+@import url("nav.css") screen;         /* Controls the navigation of the website. */
+
+@import url("footer.css") screen;      /* Controls the footer of the website. */
+
+@import url("hide.css") screen;        /* These classes hide elements depending on certain parameters. */
+
+@import url("print.css") print;        /* Ideally, every website would have a print stylesheet. In reality, no one does.
+                                          There's a couple catch-all print styles in there, but this file would obviously
+                                          need to be customer tailored for the site. */
+

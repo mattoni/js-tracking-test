@@ -1,0 +1,28 @@
+.blog-list {
+	margin: 0 0 2rem 0;
+	padding: 0;
+	list-style: none;
+}
+.blog-list li {
+
+}
+.blog-list li a {
+	display: block;
+	padding: 1rem;
+	border-top: .1rem dotted rgba(0,0,0,.5);
+}
+.blog-list li:last-child a {
+	border-bottom: .1rem dotted rgba(0,0,0,.5);
+}
+.blog-list li a strong{
+	display: block;
+}
+.blog-list li a time{
+	font-style: italic;
+	font-size: 1.2rem;
+	color: #747474;
+}
+.blog-list li a:hover {
+	text-decoration: none;
+	background: rgba(0,0,0,.05)
+}

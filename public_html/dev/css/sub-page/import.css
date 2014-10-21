@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+/*
+
+This import is for elements that only appear in sub pages. A breadcrumb is a good example of just such an element. It
+will never appear on the homepage. Also here is a page title stylesheet that controls the headings specifically on
+subpages.
+
+*/
+
+@import url("breadcrumb.css") screen;
+@import url("page-title.css") screen;

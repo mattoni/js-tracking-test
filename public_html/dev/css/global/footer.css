@@ -1,0 +1,9 @@
+footer {
+	padding: 4rem 0;
+	border-top: .1rem dotted rgba(0,0,0,.5);
+	margin-top: 5rem;
+}
+footer .copyright {
+	font-size: 1.2rem;
+	color: rgba(0,0,0,.5)
+}

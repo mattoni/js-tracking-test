@@ -1,0 +1,28 @@
+.breadcrumb {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: auto;
+	font-size: 1.2rem;
+}
+.breadcrumb li {
+	float: left;
+	margin-right: 3rem;
+	position: relative;
+}
+.breadcrumb li:after {
+	font-family: "Font Awesome";
+	content: '\f054';
+	position: absolute;
+	top: 0;
+	left: 100%;
+	width: 3rem;
+	text-align: center;
+	color: rgba(0,0,0,.2)
+}
+.breadcrumb li:last-child:after {
+	content: none;
+}
+.breadcrumb li a {
+
+}

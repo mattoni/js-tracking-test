@@ -1,0 +1,10 @@
+/*
+
+Here, we want to make the h3 a little larger because we want to maintain our document's semantic heading order, but
+we want the headings to visually be larger to make this page slightly different from the others.
+
+*/
+
+h3 {
+	font-size: 3.5rem;
+}

@@ -1,0 +1,26 @@
+.executive-profile {
+	overflow: auto;
+	clear: both;
+	margin-bottom: 4rem;
+}
+
+.executive-profile img {
+	width: 5rem;
+	float: left;
+	margin: 0;
+}
+.executive-profile p {
+	width: calc(100% - 7rem);
+	float: right;
+}
+/* For desktop displays above 600px wide. */
+
+@media ( min-width : 600px ) {
+
+	.executive-profile img {
+		width: 10rem;
+	}
+	.executive-profile p {
+		width: calc(100% - 13rem);
+	}
+}

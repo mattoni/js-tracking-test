@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+/*
+
+This import is for elements that appear on only one page. In this case, the about us page. We've included a global.css
+file here because our about us page has special styling that will need to override some global styles. We won't have
+executive profiles on any other page but our about us, so we can include that here.
+
+You don't have to be this precise with your CSS, but when you're going for a different looks between different sections
+of the website, this is important.
+
+*/
+
+@import url("global.css") screen;
+@import url("executive-profile.css") screen;

@@ -1,0 +1,29 @@
+/* TABLES */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 0 2rem 0;
+    width: 100%;
+    padding:0;
+}
+th {
+    text-align: left;
+}
+tr, th, td { }
+
+@media ( max-width : 600px ) {
+
+	.hide-cell-mobile {
+		visibility: hidden !important;
+		display: none !important;
+	}
+
+}
+
+@media ( min-width : 600px ) {
+	.hide-cell-desktop {
+		visibility: hidden !important;
+		display: none !important;
+	}
+}
+

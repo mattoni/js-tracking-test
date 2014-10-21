@@ -1,0 +1,222 @@
+/* FORMS */
+form ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+form ol li {
+	margin-bottom: 2rem;
+}
+form ol li.row input {
+	margin-bottom: 2rem;
+}
+form ol li.row .stay input, form ol li.row *[class*="col"]:last-child input {
+	margin-bottom: 0;
+}
+@media ( min-width : 600px ) {
+	form ol li.row input {
+		margin-bottom: 0;
+	}
+}
+form {
+	margin: 0
+}
+fieldset {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize:vertical;
+}
+fieldset legend {
+	*margin-left: -75%;
+	margin-bottom: 2rem;
+	font-weight: bold;
+	font-size: 1.6rem;
+	line-height: 1.3;
+}
+fieldset fieldset legend {
+	font-weight: normal;
+	margin-bottom: 0;
+	font-size: 1.4rem;
+	line-height: 1.5
+}
+label {
+	display: block;
+}
+label.inline {
+	display: inline;
+	margin-right: 1rem;
+}
+button, input, select, textarea {
+	vertical-align: baseline;
+	*vertical-align: middle
+}
+button, input {
+	line-height: normal;
+	*overflow: visible;
+}
+
+/* Input Default */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+select,
+textarea {
+	border-radius: .5rem;
+	display: block;
+	width: 100%;
+	background: #fff;
+	border: .1rem solid #d8d8d8;
+	padding: .7rem;
+	font-size: 1.6rem;
+	margin: 0;
+}
+input[type="search"] {
+	-webkit-appearance: none;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+@media ( min-width : 600px ) {
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="url"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="week"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	select,
+	textarea {
+		font-size: 1.4rem;
+	}
+}
+input[type="color"] {
+	display: block;
+	background: #fff;
+	border: .1rem solid #d8d8d8;
+	height: 4rem;
+	width: 10rem;
+	cursor: pointer;
+}
+input[type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none
+}
+
+/* Input Focus */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+select:focus,
+textarea:focus {
+	outline: 0;
+	border-color: #28354a;
+}
+
+/* Input Disabled */
+input[type="text"][disabled],
+input[type="password"][disabled],
+input[type="email"][disabled],
+input[type="url"][disabled],
+input[type="date"][disabled],
+input[type="month"][disabled],
+input[type="time"][disabled],
+input[type="datetime"][disabled],
+input[type="datetime-local"][disabled],
+input[type="week"][disabled],
+input[type="number"][disabled],
+input[type="search"][disabled],
+input[type="tel"][disabled],
+input[type="color"][disabled],
+select[disabled],
+textarea[disabled] {
+	cursor: not-allowed;
+	background-color: #ededed;
+	color: #cecece;
+}
+
+/* Input Read Only */
+input[readonly],
+select[readonly],
+textarea[readonly] {
+	background: #eee;
+	color: #777;
+	border-color: #ccc;
+}
+
+/* Radio Buttons and Checkboxes */
+input[type="checkbox"],
+input[type="radio"] {
+	box-sizing: border-box;
+	display: inline-block;
+	margin: 0 0rem 0 0;
+	width: auto;
+	line-height: 1;
+	position: relative;
+	top: .1rem;
+}
+
+/* Form Buttons */
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+button::-moz-focus-inner, input::-moz-focus-inner {
+	border: 0;
+	padding: 0
+}
+/* Form Help */
+form .help {
+	margin: 0;
+	color: #8e8e8e;
+	font-size: 1.2rem;
+	margin: 0;
+}
+form .help a {
+	color: #8e8e8e;
+	border-bottom: .1rem dotted #333;
+}
+form .help a:hover {
+	color: #000;
+	text-decoration: none;
+}
+.alert {
+	color: #e31818;
+}
+
+form ol li .button {
+	margin: 0;
+}
