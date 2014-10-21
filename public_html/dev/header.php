@@ -20,7 +20,7 @@
 
 <header>
 	<div class="container">
-		<h1 class="light"><i class="icon-tags"></i> Hi, I'm Alex</h1>
+		<h1 class="light"><i class="fa-thumbs-up"></i> Hi, I'm Alex</h1>
 	</div>
 	<nav>
 		<ul class="container">
