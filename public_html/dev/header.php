@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Include the global imports. -->
-	<link rel="stylesheet" href="http://limestone.io/trunk/css/import.css">
+	<link rel="stylesheet" href="css/global/import.css" type="text/css" />
 	<link rel="stylesheet" href="css/global-elements/import.css" type="text/css" />
 
 </head>
