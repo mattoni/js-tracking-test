@@ -3,7 +3,7 @@
 
 <head>
 
-	<title>Website Name</title>
+	<title>Alex Mattoni</title>
 
 	<meta charset="utf-8">
 
@@ -11,7 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- Include the global imports. -->
-	<link rel="stylesheet" href="css/global/import.css" type="text/css" />
+	<link rel="stylesheet" href="http://limestone.io/trunk/css/import.css">
 	<link rel="stylesheet" href="css/global-elements/import.css" type="text/css" />
 
 </head>
@@ -20,7 +20,7 @@
 
 <header>
 	<div class="container">
-		<h1 class="light"><i class="icon-tags"></i> Website Name</h1>
+		<h1 class="light"><i class="icon-tags"></i> Hi, I'm Alex</h1>
 	</div>
 	<nav>
 		<ul class="container">
