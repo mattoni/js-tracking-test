@@ -11,10 +11,11 @@
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 	<script language='javascript' src="//web.dev.concurra.com/tracker/tracker.js"></script>
 	<script>
-		__tracker = new __concurra_tracker();
+		__tracker = __concurra || {};
 		__tracker.setToken('Cwrwgno2yt');
 		__tracker.enableDebug();
 		__tracker.init();
+		console.log(__tracker);
 	</script>
 
 </head>
