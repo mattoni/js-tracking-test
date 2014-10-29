@@ -10,7 +10,7 @@
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 	<script>
-		__concurra_tracker = __concurra_tracker || {};
+		var __concurra_tracker = __concurra_tracker || {};
 		__concurra_tracker.settings.push({'token': 'Cwrwgno2yt'});
 		__concurra_tracker.settings.push({'debug': true});
 
