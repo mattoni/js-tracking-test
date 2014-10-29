@@ -15,7 +15,6 @@
 		__tracker.setToken('Cwrwgno2yt');
 		__tracker.enableDebug();
 		__tracker.init();
-		console.log(__tracker);
 	</script>
 
 </head>
