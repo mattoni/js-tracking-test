@@ -9,12 +9,18 @@
 	<link href="resources/css/global/default.css" type="text/css" rel="stylesheet" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-	<script language='javascript' src="//web.dev.concurra.com/tracker/tracker.js"></script>
 	<script>
-		__tracker = new __concurra_tracker();
-		__tracker.setToken('Cwrwgno2yt');
-		__tracker.enableDebug();
-		__tracker.init();
+		__concurra_tracker = __concurra_tracker || {};
+		__concurra_tracker.settings.push({'token': 'Cwrwgno2yt'});
+		__concurra_tracker.settings.push({'debug': true});
+
+		(function() {
+			var __concurra_script = document.createElement('script');
+			__concurra_script.type = 'text/javascript';
+			__concurra_script.async = true;
+			__concurra_script.src = ('//web.dev.concurra.com/tracker/tracker.js');
+			var __concurra_parent = document.getElementsByTagName('script')[0]; __concurra_parent.parentNode.insertBefore(__concurra_script, __concurra_parent);
+		})();
 	</script>
 
 </head>
