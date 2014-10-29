@@ -11,9 +11,9 @@
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 	<script>
 		var __concurra_tracker = __concurra_tracker || {};
-		__concurra_tracker.push({'settings': {
-			'token':'Cwrwgno2yt',
-			'debug':true
+		__concurra_tracker.push({settings: {
+			token:'Cwrwgno2yt',
+			debug:true
 		}});
 
 		(function() {
