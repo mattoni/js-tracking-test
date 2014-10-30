@@ -12,7 +12,7 @@
 	<script>
 		var __concurra_queue =  {
 			'setToken':'Cwrwgno2yt',
-			'enableDebug':true
+			'setDebug':true
 		};
 
 		(function() {
