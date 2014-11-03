@@ -11,13 +11,6 @@
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<script>
-		var __concurra_queue =  {
-			'setToken':'Cwrwgno2yt',
-			'setDebug':true
-		};
-	</script>
-	<script src="//web.dev.concurra.com/tracker/tracker.js"></script>
 	<header>
 		<nav class="container">
 			<ul>
@@ -61,4 +54,11 @@
 		</div>
 	</div>
 </body>
+<script>
+	var __concurra_queue =  {
+		'setToken':'Cwrwgno2yt',
+		'setDebug':true
+	};
+</script>
+<script src="//web.dev.concurra.com/tracker/tracker.js"></script>
 </html>
