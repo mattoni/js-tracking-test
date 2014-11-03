@@ -2,6 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script>
+		var __concurra_queue =  {
+			'setToken':'Cwrwgno2yt',
+			'setDebug':true
+		};
+	</script>
+	<script src="//web.dev.concurra.com/tracker/tracker.js"></script>
 	<title>Jake Warner</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,24 +16,8 @@
 	<link href="resources/css/global/default.css" type="text/css" rel="stylesheet" />
 	<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css" type="text/css" rel="stylesheet" />
 	<link href='//fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-	<script>
-		var __concurra_queue =  {
-			'setToken':'Cwrwgno2yt',
-			'setDebug':true
-		};
-
-		(function() {
-			var __concurra_script = document.createElement('script');
-			__concurra_script.type = 'text/javascript';
-			__concurra_script.async = true;
-			__concurra_script.src = ('//web.dev.concurra.com/tracker/tracker.js');
-			var __concurra_parent = document.getElementsByTagName('script')[0]; __concurra_parent.parentNode.insertBefore(__concurra_script, __concurra_parent);
-		})();
-	</script>
-
 </head>
 <body>
-
 	<header>
 		<nav class="container">
 			<ul>
