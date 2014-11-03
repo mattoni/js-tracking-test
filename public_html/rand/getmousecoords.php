@@ -2,13 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<script>
-		var __concurra_queue =  {
-			'setToken':'Cwrwgno2yt',
-			'setDebug':true
-		};
-	</script>
-	<script src="//web.dev.concurra.com/tracker/tracker.js"></script>
 	<title>Jake Warner</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,7 +53,12 @@
 			</div>
 		</div>
 	</div>
-
-
 </body>
 </html>
+<script>
+	var __concurra_queue =  {
+		'setToken':'Cwrwgno2yt',
+		'setDebug':true
+	};
+</script>
+<script src="//web.dev.concurra.com/tracker/tracker.js"></script>
