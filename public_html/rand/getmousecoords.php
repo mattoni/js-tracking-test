@@ -56,7 +56,7 @@
 </body>
 <script>
 	var __concurra_queue =  {
-		'setToken':'Cwrwgno2yt',
+		'setToken':'SuperToken',
 		'setDebug':true
 	};
 </script>
